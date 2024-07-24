@@ -1,0 +1,67 @@
+<%= form_with(model: dependent) do |form| %>
+  <% if dependent.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(dependent.errors.count, "error") %> prohibited this dependent from being saved:</h2>
+
+      <ul>
+        <% dependent.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :image_url, style: "display: block" %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div>
+    <%= form.label :relationship, style: "display: block" %>
+    <%= form.text_field :relationship %>
+  </div>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :date_of_birth, style: "display: block" %>
+    <%= form.text_area :date_of_birth %>
+  </div>
+
+  <div>
+    <%= form.label :immigration_status, style: "display: block" %>
+    <%= form.text_field :immigration_status %>
+  </div>
+
+  <div>
+    <%= form.label :country_of_citizenship, style: "display: block" %>
+    <%= form.text_field :country_of_citizenship %>
+  </div>
+
+  <div>
+    <%= form.label :contact_info, style: "display: block" %>
+    <%= form.text_area :contact_info %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

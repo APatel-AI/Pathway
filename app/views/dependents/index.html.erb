@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dependents</h1>
+
+<div id="dependents">
+  <% @dependents.each do |dependent| %>
+    <%= render dependent %>
+    <p>
+      <%= link_to "Show this dependent", dependent %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New dependent", new_dependent_path %>

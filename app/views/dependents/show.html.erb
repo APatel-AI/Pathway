@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dependent %>
+
+<div>
+  <%= link_to "Edit this dependent", edit_dependent_path(@dependent) %> |
+  <%= link_to "Back to dependents", dependents_path %>
+
+  <%= button_to "Destroy this dependent", @dependent, method: :delete %>
+</div>
