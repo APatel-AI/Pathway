@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_24_201010) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_24_201431) do
   create_table "dependents", force: :cascade do |t|
     t.integer "user_id"
     t.string "image_url"
@@ -22,6 +22,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_24_201010) do
     t.string "immigration_status"
     t.string "country_of_citizenship"
     t.text "contact_info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.integer "profile_id"
+    t.datetime "expiry_date"
+    t.string "summary"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reminders", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "send_at"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
