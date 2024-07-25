@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get "/forms", to: "forms#index"
 
+
+
   resources :reminders
   resources :documents
   resources :dependents

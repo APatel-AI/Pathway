@@ -1,13 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @dependent %>
+  <%= link_to "Edit profile", edit_dependent_path(@dependent) %>
+    <%= button_to "Delete Profile", @dependent, method: :delete %>
 
-<div>
-  <%= link_to "Edit this dependent", edit_dependent_path(@dependent) %> |
-  <%= link_to "Back to dependents", dependents_path %>
-
-  <%= button_to "Destroy this dependent", @dependent, method: :delete %>
+<br>
+<br>
 
 
-  
+<h1>Documents</h1>
+<% @documents.each do |document| %>
+  <p>Document Title: <%= document.summary %></p>
+<% end %>
+
+
+
+
+  <%= link_to "Upload Documents", new_document_path, class: "btn btn-primary" %>
+
+<br>
+
+    <%= link_to "Back", dependents_path %>
+
+
 </div>

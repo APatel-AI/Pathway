@@ -8,6 +8,8 @@ class DependentsController < ApplicationController
 
   # GET /dependents/1 or /dependents/1.json
   def show
+    @dependent = Dependent.find(params[:id])
+    @documents = @dependent.documents
   end
 
   # GET /dependents/new
