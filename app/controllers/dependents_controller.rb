@@ -13,6 +13,7 @@ class DependentsController < ApplicationController
   # GET /dependents/new
   def new
     @dependent = Dependent.new
+
   end
 
   # GET /dependents/1/edit
