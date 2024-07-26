@@ -1,19 +1,21 @@
 class DependentsController < ApplicationController
   before_action :set_dependent, only: %i[ show edit update destroy ]
+  before_action :ensure_current_user_is_creator, only: %i[show edit update destroy]
 
   # GET /dependents or /dependents.json
   def index
-    @dependents = Dependent.all
+    @dependents = current_user.dependents
   end
 
   # GET /dependents/1 or /dependents/1.json
   def show
+    @dependent = Dependent.find(params[:id])
+    @documents = @dependent.documents
   end
 
   # GET /dependents/new
   def new
     @dependent = Dependent.new
-
   end
 
   # GET /dependents/1/edit
@@ -59,10 +61,18 @@ class DependentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_dependent
       @dependent = Dependent.find(params[:id])
     end
+
+    def ensure_current_user_is_creator
+      if @dependent.user_id !=  current_user.id
+        redirect_back fallback_location: root_url, alert: "You're not authorized for that."
+      end
+
+    end
+
 
     # Only allow a list of trusted parameters through.
     def dependent_params

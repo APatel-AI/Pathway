@@ -23,7 +23,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many  :profiles, class_name: "Dependent", foreign_key: "user_id", dependent: :destroy
+  has_many  :dependents, class_name: "Dependent", foreign_key: "user_id", dependent: :destroy
   has_many  :reminders, class_name: "Reminder", foreign_key: "user_id", dependent: :destroy
 
 
