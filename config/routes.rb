@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
 
   resources :reminders
-  resources :documents
+  resources :documents, except: [:new, :create]
+
   resources :dependents do
-    resources :documents, only: [:new, :create]
+    resources :documents, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
 
   end
