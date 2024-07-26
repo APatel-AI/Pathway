@@ -1,14 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Profiles</h1>
+<h1>Your Profiles</h1>
 
 <div id="dependents">
   <% @dependents.each do |dependent| %>
     <%= dependent.image_url%>
     <br>
-    <%= dependent.relationship%>
-
-
+    <strong>Relationship:</strong> <%= dependent.relationship %>
     <p>
       <%= link_to "View Profile", dependent %>
     </p>

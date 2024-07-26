@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   resources :reminders
   resources :documents
-  resources :dependents
+  resources :dependents do
+    resources :documents, only: [:new, :create]
+
+
+  end
   root "dashboard#greetings"
 
   devise_for :users
