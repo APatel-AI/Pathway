@@ -10,6 +10,6 @@ class DashboardController < ApplicationController
   end
 
   def greetings
-    @message = "Welcome to Pathway"
+
   end
 end
