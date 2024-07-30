@@ -1,16 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<p class="text-success"><%= notice %></p>
 
-<h1>Your Profiles</h1>
+<h1>Profiles</h1>
 
-<div id="dependents">
+<div id="dependents" class="row">
   <% @dependents.each do |dependent| %>
-    <%= dependent.image_url%>
-    <br>
-    <strong>Relationship:</strong> <%= dependent.relationship %>
-    <p>
-      <%= link_to "View Profile", dependent %>
-    </p>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="<%= dependent.image_url %>" class="rounded-circle img-thumbnail mb-1" alt="Profile Image" style="width: 100px; height: 100px;">
+
+        <div class="card-body">
+           <h1><%= dependent.first_name %></h1>
+          <p>
+            <%= link_to "View Profile", dependent, class: "btn btn-primary" %>
+          </p>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "Add New Profile", new_dependent_path %>
+<div class="mt-4">
+  <%= link_to "Add New Profile", new_dependent_path, class: "btn btn-success" %>
+</div>
