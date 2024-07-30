@@ -1,0 +1,52 @@
+
+
+.hero {
+  background-size: cover;
+  color: white;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: 8rem;
+  font-weight: bold;
+  
+}
+
+.features {
+  padding: 3rem 0;
+}
+
+.nav-item{
+  font-family: "Hanken Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 17px;
+
+}
+.nav-item :hover{
+  text-decoration: underline;
+  animation-duration: 20s;
+}
+
+.pathway_logo{
+  height: 80px; 
+  width: auto;
+
+}
+
+
+footer {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+}
