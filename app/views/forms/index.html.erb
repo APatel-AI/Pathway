@@ -1,4 +1,19 @@
-<div class="forms-page">
-  <h1> Forms </h1>
-
-</div>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">USCIS Forms</h1>
+    <div class="row">
+      <% @forms.each do |form| %>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= form[:name] %></h5>
+              <p class="card-text"><%= form[:details] %></p>
+              <a href="<%= form[:url] %>" class="btn btn-secondary" target="_blank">View Form</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>
