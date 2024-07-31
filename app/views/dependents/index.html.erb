@@ -1,24 +1,24 @@
 <p class="text-success"><%= notice %></p>
 
-<h1>Profiles</h1>
+<h1 class="mb-4">Profiles</h1>
 
-<div id="dependents" class="row">
-  <% @dependents.each do |dependent| %>
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="<%= dependent.image_url %>" class="rounded-circle img-thumbnail mb-1" alt="Profile Image" style="width: 100px; height: 100px;">
-
-        <div class="card-body">
-           <h1><%= dependent.first_name %></h1>
-          <p>
-            <%= link_to "View Profile", dependent, class: "btn btn-primary" %>
-          </p>
+<div class="container overflow-hidden text-center">
+  <div class="row gx-5">
+    <% @dependents.each do |dependent| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border border-0">
+          <%= link_to dependent_path(dependent) do %>
+            <%= image_tag(dependent.image_url, alt: dependent.first_name, class: "card-img-top profile_image rounded-circle img-thumbnail mt-3") %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= dependent.first_name %></h5>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
-<div class="mt-4">
+<div class="mt-4 text-center">
   <%= link_to "Add New Profile", new_dependent_path, class: "btn btn-success" %>
 </div>
