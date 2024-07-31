@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
   before_action :set_document, only: %i[show edit update destroy]
   before_action :set_dependent, only: %i[new create]
 
+
   # GET /documents or /documents.json
   def index
     @documents = Document.all
@@ -68,6 +69,6 @@ class DocumentsController < ApplicationController
   end
 
   def document_params
-    params.require(:document).permit(:expiry_date, :summary, :status)
+    params.require(:document).permit(:expiry_date, :summary, :status,:image_url)
   end
 end

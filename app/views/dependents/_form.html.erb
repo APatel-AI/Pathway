@@ -1,8 +1,7 @@
-<%= form_with(model: dependent) do |form| %>
+<%= form_with(model: dependent, local: true) do |form| %>
   <% if dependent.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(dependent.errors.count, "error") %> prohibited this dependent from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h4><%= pluralize(dependent.errors.count, "error") %> prohibited this dependent from being saved:</h4>
       <ul>
         <% dependent.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,63 +10,55 @@
     </div>
   <% end %>
 
-<div>
-  <%= form_with(model: dependent, local: true) do |form| %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-    
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <div class="mb-3">
+    <%= form.label :image_url, class: "form-label" %>
+    <%= form.text_field :image_url, class: "form-control" %>
+  </div>
 
+  <div class="mb-3">
+    <%= form.label :address, class: "form-label" %>
+    <%= form.text_area :address, class: "form-control", rows: 3 %>
+  </div>
 
+  <div class="mb-3">
+    <%= form.label :relationship, class: "form-label" %>
+    <%= form.text_field :relationship, class: "form-control" %>
+  </div>
 
+  <div class="mb-3">
+    <%= form.label :first_name, class: "form-label" %>
+    <%= form.text_field :first_name, class: "form-control" %>
+  </div>
 
-  <div>
-    <%= form.label :image_url, style: "display: block" %>
-    <%= form.text_field :image_url %>
+  <div class="mb-3">
+    <%= form.label :last_name, class: "form-label" %>
+    <%= form.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :date_of_birth, class: "form-label" %>
+    <%= form.date_field :date_of_birth, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :immigration_status, class: "form-label" %>
+    <%= form.text_field :immigration_status, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :country_of_citizenship, class: "form-label" %>
+    <%= form.text_field :country_of_citizenship, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :contact_info, class: "form-label" %>
+    <%= form.text_area :contact_info, class: "form-control", rows: 3 %>
   </div>
 
   <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_area :address %>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
 
-  <div>
-    <%= form.label :relationship, style: "display: block" %>
-    <%= form.text_field :relationship %>
-  </div>
 
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div>
-    <%= form.label :date_of_birth, style: "display: block" %>
-    <%= form.text_area :date_of_birth %>
-  </div>
-
-  <div>
-    <%= form.label :immigration_status, style: "display: block" %>
-    <%= form.text_field :immigration_status %>
-  </div>
-
-  <div>
-    <%= form.label :country_of_citizenship, style: "display: block" %>
-    <%= form.text_field :country_of_citizenship %>
-  </div>
-
-  <div>
-    <%= form.label :contact_info, style: "display: block" %>
-    <%= form.text_area :contact_info %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
-  <% end %>
-
-  </div>

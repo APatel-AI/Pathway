@@ -20,4 +20,5 @@ class Dependent < ApplicationRecord
   belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
   has_many  :documents, class_name: "Document", foreign_key: "profile_id", dependent: :destroy
 
+
 end

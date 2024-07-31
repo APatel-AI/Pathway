@@ -56,3 +56,27 @@
 .forms-page{
   height: 100vh;
 }
+
+/* LOGIN */
+.login-form{
+  height:100vh;
+}
+
+/* DASHBOARD */
+.dashboard-container{
+  height: 100vh;
+}
+
+.profile_image{
+  width: 200px; 
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}
+
+
+/* Proflies View */
+.profiles_view{
+  height:100vh;
+}
