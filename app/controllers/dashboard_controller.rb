@@ -12,7 +12,4 @@ class DashboardController < ApplicationController
       redirect_to landing_path
     end
   end
-
-  def greetings
-  end
 end
