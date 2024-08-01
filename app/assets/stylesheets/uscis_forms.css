@@ -1,0 +1,23 @@
+.card {
+  height: 100%;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.card-text {
+  font-size: 1rem;
+  flex-grow: 1;
+}
+.btn-secondary {
+  align-self: flex-end;
+}
+
+.search_bar{
+  color:black
+}

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/landing", to: "dashboard#greetings"
   get "/forms", to: "forms#index"
 
+
   resources :reminders
   resources :documents, except: [:new, :create]
 

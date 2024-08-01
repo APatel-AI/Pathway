@@ -1,4 +1,31 @@
-<div class="forms-page">
-  <h1> Forms </h1>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">USCIS Forms</h1>
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <form method="get" action="<%= forms_path %>" class="form-inline d-flex justify-content-center">
+          <input class="form-control mr-2" type="search" name="query" placeholder="Search forms" aria-label="Search" value="<%= params[:query] %>">
+          <button class="btn btn-primary search_bar" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <% @forms.each do |form| %>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= form[:name] %></h5>
+              <p class="card-text"><%= form[:details] %></p>
+              <a href="<%= form[:url] %>" class="btn btn-secondary" target="_blank">View Form</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= will_paginate @forms, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
+  </div>
 
-</div>
+</body>
+</html>

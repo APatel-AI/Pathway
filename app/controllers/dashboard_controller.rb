@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:greetings, :home]
 
   def dashboard
     @dependents = current_user.dependents
@@ -11,8 +11,5 @@ class DashboardController < ApplicationController
     else
       redirect_to landing_path
     end
-  end
-
-  def greetings
   end
 end
