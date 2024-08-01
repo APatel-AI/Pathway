@@ -1,3 +1,4 @@
+
 <body>
   <div class="container mt-5">
     <h1 class="text-center mb-4">USCIS Forms</h1>
@@ -13,6 +14,10 @@
           </div>
         </div>
       <% end %>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= will_paginate @clients, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+
     </div>
   </div>
 </body>
