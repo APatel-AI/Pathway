@@ -20,7 +20,7 @@ services:
         value: "ap-pathway-24" 
       - key: AWS_ACCESS_KEY_ID
         value: ""
-      - key: AWS_SECRET_ACESS_KEY
+      - key: AWS_SECRET_ACCESS_KEY
         value: ""
       - key: RAILS_ENV
         value: production
