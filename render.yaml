@@ -10,6 +10,8 @@ services:
         fromDatabase:
           name: pathway
           property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
       - key: SECRET_KEY_BASE
         generateValue: true
       - key: AWS_ACCESS_KEY_ID
