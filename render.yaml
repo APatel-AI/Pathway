@@ -6,6 +6,10 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "./bin/render-start.sh"
     envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pathway
+          property: connectionString
       - key: SECRET_KEY_BASE
         generateValue: true
       - key: AWS_ACCESS_KEY_ID
@@ -18,10 +22,7 @@ services:
         value: "ap-pathway-24" 
       - key: RAILS_ENV
         value: production
-      - key: DATABASE_URL
-        fromDatabase:
-          name: pathway
-          property: connectionString
+     
 databases:
 - name: pathway
   plan: free
