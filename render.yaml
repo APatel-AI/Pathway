@@ -1,10 +1,26 @@
+databases:
+- name: pathway
+  plan: free
+  databaseName: pathway
+  user: pathway
+  
 services:
   - type: web
-    name: my-app-name # the name of this service, eg hello-world
-    env: ruby # this app is written in ruby
-    plan: free # make sure to set this to free or you'll get billed $$$
-    buildCommand: "./bin/render-build.sh" # # we already created these two files for you
+    name: pathway
+    env: ruby
+    plan: free
+   buildCommand: "./bin/render-build.sh"
     startCommand: "./bin/render-start.sh"
-    envVars: # this section sets some ENV variables needed by Render for deployment
-      - key: SECRET_KEY_BASE
+    envVars:
+        - key: SECRET_KEY_BASE
         generateValue: true
+      - key: AWS_ACCESS_KEY_ID
+        fromDatabase: AWS_ACCESS_KEY_ID
+      - key: AWS_SECRET_ACCESS_KEY
+        fromDatabase: AWS_SECRET_ACCESS_KEY
+      - key: AWS_REGION
+        fromDatabase: AWS_REGION
+      - key: AWS_BUCKET
+        fromDatabase: AWS_BUCKET
+      - key: RAILS_ENV
+        value: production
