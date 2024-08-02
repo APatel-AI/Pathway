@@ -69,6 +69,6 @@ class DocumentsController < ApplicationController
   end
 
   def document_params
-    params.require(:document).permit(:expiry_date, :summary, :status,:image_url)
+    params.require(:document).permit(:expiry_date, :summary, :status,:image)
   end
 end
