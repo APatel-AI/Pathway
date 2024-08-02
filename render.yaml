@@ -30,3 +30,4 @@ databases:
   plan: free
   databaseName: pathway
   user: pathway
+  ipAllowList: []
