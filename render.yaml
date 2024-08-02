@@ -1,9 +1,3 @@
-databases:
-- name: pathway
-  plan: free
-  databaseName: pathway
-  user: pathway
-  
 services:
   - type: web
     name: pathway
@@ -24,3 +18,8 @@ services:
         fromDatabase: AWS_BUCKET
       - key: RAILS_ENV
         value: production
+databases:
+- name: db
+  plan: free
+  ipAllowList: []
+  
