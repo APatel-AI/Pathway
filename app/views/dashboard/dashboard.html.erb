@@ -7,7 +7,11 @@
       <% @dependents.each do |dependent| %>
         <div class="dependent">
           <%= link_to dependent_path(dependent) do %>
-            <%= image_tag(dependent.image_url, alt: dependent.first_name, class: "profile_image rounded-circle img-thumbnail mb-1") %>
+            <% if dependent.image.attached? %>
+              <%= image_tag dependent.image, alt: dependent.first_name, class: "profile_image rounded-circle img-thumbnail mb-1" %>
+            <% else %>
+              <p>No image uploaded.</p>
+            <% end %>
           <% end %>
         </div>
       <% end %>
