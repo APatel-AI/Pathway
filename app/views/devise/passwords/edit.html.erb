@@ -1,26 +1,31 @@
 <h2>Change your password</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), method: :put, html: { class: "needs-validation", novalidate: true }) do |f| %>
 
-  <%= f.input :reset_password_token, as: :hidden %>
-  <%= f.full_error :reset_password_token %>
+  <%= f.hidden_field :reset_password_token %>
 
-  <div class="form-inputs">
-    <%= f.input :password,
-                label: "New password",
-                required: true,
-                autofocus: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                label: "Confirm your new password",
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+  <div class="form-inputs mb-3">
+    <%= f.label :password, "New password", class: "form-label" %>
+    <%= f.password_field :password,
+                         required: true,
+                         autofocus: true,
+                         class: "form-control",
+                         autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <div class="form-text">Minimum <%= @minimum_password_length %> characters</div>
+    <% end %>
+  </div>
+
+  <div class="form-inputs mb-3">
+    <%= f.label :password_confirmation, "Confirm your new password", class: "form-label" %>
+    <%= f.password_field :password_confirmation,
+                         required: true,
+                         class: "form-control",
+                         autocomplete: "new-password" %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+    <%= f.submit "Change my password", class: "btn btn-primary" %>
   </div>
 <% end %>
 
