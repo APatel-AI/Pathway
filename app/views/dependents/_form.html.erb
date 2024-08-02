@@ -10,10 +10,9 @@
     </div>
   <% end %>
 
-  <%= form.hidden_field :user_id, value: current_user.id %>
-  <div class="mb-3">
-    <%= form.label :image_url, class: "form-label" %>
-    <%= form.text_field :image_url, class: "form-control" %>
+   <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="mb-3">

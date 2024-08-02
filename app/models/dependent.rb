@@ -8,7 +8,6 @@
 #  country_of_citizenship :string
 #  date_of_birth          :text
 #  first_name             :string
-#  image_url              :string
 #  immigration_status     :string
 #  last_name              :string
 #  relationship           :string
@@ -19,6 +18,6 @@
 class Dependent < ApplicationRecord
   belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
   has_many  :documents, class_name: "Document", foreign_key: "profile_id", dependent: :destroy
-
+  has_one_attached :image
 
 end
