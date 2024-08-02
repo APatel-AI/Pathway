@@ -1,9 +1,3 @@
-databases:
-- name: pathway
-  plan: free
-  databaseName: pathway
-  user: pathway
-  
 services:
   - type: web
     name: pathway
@@ -28,3 +22,8 @@ services:
         fromDatabase:
           name: pathway
           property: connectionString
+databases:
+- name: pathway
+  plan: free
+  databaseName: pathway
+  user: pathway
