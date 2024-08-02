@@ -9,7 +9,7 @@ services:
     name: pathway
     env: ruby
     plan: free
-   buildCommand: "./bin/render-build.sh"
+    buildCommand: "./bin/render-build.sh"
     startCommand: "./bin/render-start.sh"
     envVars:
       - key: SECRET_KEY_BASE
