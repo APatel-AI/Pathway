@@ -24,6 +24,3 @@ services:
         fromDatabase: AWS_BUCKET
       - key: RAILS_ENV
         value: production
-steps:
-    - name: Precompile assets
-      run: RAILS_ENV=production bundle exec rake assets:precompile
