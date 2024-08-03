@@ -3,14 +3,19 @@
     <div class="alert alert-danger">
       <h4><%= pluralize(dependent.errors.count, "error") %> prohibited this dependent from being saved:</h4>
       <ul>
-        <% dependent.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% dependent.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-   <div class="field">
+  <div class="mb-3">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+   
+  </div>
+
+  <div class="field mb-3">
     <%= form.label :image %>
     <%= form.file_field :image %>
   </div>
@@ -58,6 +63,4 @@
   <div>
     <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
-
-
 <% end %>
