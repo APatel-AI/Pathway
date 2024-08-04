@@ -12,20 +12,8 @@
               <% if dependent.image.attached? %>
                 <%= image_tag dependent.image, alt: dependent.first_name, class: "profile_image rounded-circle img-thumbnail mb-1" %>
               <% else %>
-                <p>No image uploaded.</p>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultImageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    Select Default Image
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="defaultImageDropdown">
-                    <% default_images = ['default_image_1.png', 'default_image_2.png', 'default_image_3.png'] %>
-                    <% default_images.each do |image| %>
-                      <li>
-                        <%= link_to image_tag(image, alt: 'Default Image', class: "img-thumbnail"), '#', class: "dropdown-item", data: { action: "select-image", url: image } %>
-                      </li>
-                    <% end %>
-                  </ul>
-                </div>
+                <%= link_to image_tag("mustache.png", class: "card-img-top profile_image rounded-circle img-thumbnail mt-3"), dependent_path(dependent) %>
+
               <% end %>
             <% end %>
           </div>
@@ -35,6 +23,4 @@
       <%= link_to "<i class='fa-sharp fa-solid fa-plus fa-xl'></i>".html_safe, new_dependent_path, class: 'add-profile-icon' %>
     <% end %>
   </div>
-
- 
 </body>
