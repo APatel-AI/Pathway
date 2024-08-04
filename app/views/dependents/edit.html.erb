@@ -1,10 +1,8 @@
-<h1>Editing Profile</h1>
-
+<h1>Edit Profile</h1>
 <%= render "form", dependent: @dependent %>
-
 <br>
-
 <div>
-  <%= link_to "Show this dependent", @dependent %> |
-  <%= link_to "Back to dependents", dependents_path %>
+  <%= link_to "Update Profile", @dependent, class:"btn form_btn" %>
+  <br>
+  <%= link_to "Back", dependents_path ,class:"btn form_btn"%>
 </div>

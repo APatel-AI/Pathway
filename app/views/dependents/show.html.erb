@@ -1,26 +1,33 @@
+<div class="d-flex flex-column justify-content-center" style="min-height: 100vh;">
 
-
-<div class="family-view">
-<%= render @dependent %>
-<div class="mb-3">
-  <%= link_to "Edit profile", edit_dependent_path(@dependent), class: "btn btn-warning" %>
-  <%= button_to "Delete Profile", @dependent, method: :delete, class: "btn btn-danger" %>
-</div>
-
-<h1>View Documents</h1>
-<% @dependent.documents.each do |document| %>
-  <div class="card mb-3">
-    <div class="card-body">
-      <p class="card-text">
-        Document Title: 
-        <%= link_to document.summary, document_path(document) %>
-      </p>
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <%= render @dependent %>
+      <div class="mb-3">
+        <%= link_to "Edit profile", edit_dependent_path(@dependent), class: "btn btn-primary" %>
+        <%= button_to "Delete Profile", @dependent, method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h1>View Documents</h1>
+        <% @dependent.documents.each do |document| %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <p class="card-text">
+                <%= link_to document.summary, document_path(document) %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+        <div class="mb-3">
+          <%= link_to "Upload Documents", new_dependent_document_path(@dependent), class: "btn btn-primary" %>
+        </div>
+        <%= link_to "Back", dependents_path, class: "btn btn-dark" %>
+      </div>
     </div>
   </div>
-<% end %>
-
-<div class="mb-3 ">
-  <%= link_to "Upload Documents", new_dependent_document_path(@dependent), class: "btn btn-primary" %>
 </div>
-<%= link_to "Back", dependents_path, class: "btn btn-dark" %>
+
 </div>
