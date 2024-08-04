@@ -12,12 +12,11 @@
 
   <div class="mb-3">
     <%= form.hidden_field :user_id, value: current_user.id %>
-   
   </div>
 
-  <div class="field mb-3">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+  <div class="mb-3">
+    <%= form.label :image, class: "form-label" %>
+    <%= form.file_field :image, class: "form-control" %>
   </div>
 
   <div class="mb-3">
@@ -61,6 +60,7 @@
   </div>
 
   <div>
-    <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%= form.submit "Create Profile", class: "btn btn-primary" %>
   </div>
+
 <% end %>

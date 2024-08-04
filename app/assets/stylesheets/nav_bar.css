@@ -1,8 +1,9 @@
-.nav-item{
-  font-family: "Hanken Grotesk", sans-serif;
+.nav-link{
+  font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 15px;
+  text-transform: uppercase;
 
 }
 .nav-item :hover{

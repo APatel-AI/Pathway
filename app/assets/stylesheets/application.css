@@ -15,12 +15,11 @@
  */
 
 /* LANDING PAGE */
-.landing-page{
-  height: 90vh;
-}
 
+.landing-page {
+  height: 100vh;
+}
 .hero {
-  color: white;
   height: 50vh;
   display: flex;
   align-items: center;
@@ -31,49 +30,80 @@
   font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
-  
-}
-
-.hero h1 {
-  font-size: 8rem;
-  font-weight: bold;
-  
-}
-
-/* FOOTER */
-.footer {
-  position: relative; 
-  bottom: 0;
-  height: 200px;
-  width: 100%;
-  margin-top: 20px; 
 }
 
 
-.forms-page{
-  height: 100vh;
-}
 
-/* LOGIN */
-.login-form{
-  height:100vh;
-}
 
-/* DASHBOARD */
-.dashboard-container{
-  height: 100vh;
-}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px){
+  .hero h1 {
+    font-size: 4rem;
+  }
 
-.profile_image{
-  width: 200px; 
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.5rem;
+  }
 
 }
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px)  {
+  .hero {
+    height: 60vh;
+  }
 
-/* Proflies View */
-.profiles_view{
-  height:100vh;
+  .hero h1 {
+    font-size: 7rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .hero {
+    height: 100vh;
+  }
+
+  .hero h1 {
+    font-size: 8rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */ 
+@media (min-width: 1200px) {
+  .hero {
+    height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 9rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }

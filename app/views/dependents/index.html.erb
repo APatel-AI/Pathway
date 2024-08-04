@@ -1,5 +1,4 @@
 <div class="profiles_view">
-  <p class="text-success"><%= notice %></p>
 
   <h1 class="mb-4">Profiles</h1>
 
@@ -7,13 +6,13 @@
     <div class="row gx-5">
       <% @dependents.each do |dependent| %>
         <div class="col-md-4 mb-4">
-          <div class="card h-100 border border-0">
+          <div class="card h-100 border border-0 shadow">
             <% if dependent.image.attached? %>
               <%= link_to image_tag(dependent.image, class: "card-img-top profile_image rounded-circle img-thumbnail mt-3"), dependent_path(dependent) %>
             <% else %>
-              <div class="card-img-top profile_image rounded-circle img-thumbnail mt-3">
-                No image uploaded.
-              </div>
+              
+                <%= link_to image_tag("mustache.png", class: "card-img-top profile_image rounded-circle img-thumbnail mt-3"), dependent_path(dependent) %> 
+
             <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= dependent.first_name %></h5>
@@ -21,10 +20,17 @@
           </div>
         </div>
       <% end %>
-    </div>
-  </div>
+      <div class="col-md-4 mb-4">
 
-  <div class="mt-4 text-center">
-    <%= link_to "Add New Profile", new_dependent_path, class: "btn btn-success" %>
+        <div class="card h-100 border border-0 shadow">
+          <div class="card-body justify-content-center">
+            <div class="text-center">
+              <%= link_to "<i class='fa-sharp fa-solid fa-plus fa-xl'></i>".html_safe, new_dependent_path, class: 'add-profile-icon' %>
+              <p class="mt-2">Add New Profile</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
