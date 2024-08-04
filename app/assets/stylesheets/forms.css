@@ -1,0 +1,25 @@
+.login-form .card {
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.login-form .bg-dark {
+  background-color: #343a40;
+}
+
+.login-form .bg-light {
+  background-color: #f8f9fa;
+}
+
+
+.form_btn{
+  background-color: #202020;
+  margin-bottom: 3px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+.form_btn:hover{
+  background-color: #3d3d3d;
+  color: white;
+}
