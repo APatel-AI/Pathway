@@ -1,10 +1,16 @@
-.login-form .card {
+.login-form .card, 
+.edit-profile-form .card {
   border: none;
   border-radius: 0.5rem;
   overflow: hidden;
+ 
 }
 
-.login-form .bg-dark {
+.login-form-view{
+  height: 100vh;
+}
+.login-form .bg-dark,
+.edit-profile-form .bg-dark {
   background-color: #343a40;
 }
 
