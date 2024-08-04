@@ -1,5 +1,6 @@
 .login-form .card, 
-.edit-profile-form .card {
+.edit-profile-form .card,
+.signup-form .card {
   border: none;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -10,11 +11,13 @@
   height: 100vh;
 }
 .login-form .bg-dark,
-.edit-profile-form .bg-dark {
+.edit-profile-form .bg-dark,
+.signup-form .bg-dark {
   background-color: #343a40;
 }
 
-.login-form .bg-light {
+.login-form .bg-light,
+.signup-form .bg-light {
   background-color: #f8f9fa;
 }
 
