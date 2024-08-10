@@ -1,31 +1,29 @@
-<div id="<%= dom_id document %>" class="card mb-4">
-  <div class="card-body">
-    <h5 class="card-title">Document Details</h5>
-    
-    <div class="mb-3">
-      <% if document.image.attached? %>
-        <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal-<%= document.id %>">
-          <%= image_tag document.image, class: "img-fluid mx-auto d-block", style: "max-width: 300px;" %>
-        </a>
-      <% else %>
-        <p>No image uploaded.</p>
-      <% end %>
-    </div>
-
-   
-  </div>
-</div>
-
-<div class="modal fade" id="imageModal-<%= document.id %>" tabindex="-1" aria-labelledby="imageModalLabel-<%= document.id %>" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="imageModalLabel-<%= document.id %>"><%= document.name %></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <%= image_tag document.image, class: "img-fluid" %>
+<div class="row mb-3">
+  <div class="col mb-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">
+        <%= link_to document.name, "#", class: "text-decoration-none", data: { bs_toggle: "modal", bs_target: document.file.content_type == "application/pdf" ? "#pdfModal-#{document.id}" : "#imageModal-#{document.id}" } %>
+      </h4>
+      <div class="d-flex align-items-center">
+        <%= link_to "<i class='fas fa-edit'></i>".html_safe, edit_document_path(document), class: "btn btn-info me-2", title: "Edit this document" %>
+        <%= button_to "<i class='fas fa-trash'></i>".html_safe, document, method: :delete, class: "btn btn-danger", title: "Destroy this document" %>
       </div>
     </div>
   </div>
+
+  <% if document.file.attached? && document.file.content_type == "application/pdf" %>
+    <div class="modal fade" id="pdfModal-<%= document.id %>" tabindex="-1" aria-labelledby="pdfModalLabel-<%= document.id %>" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pdfModalLabel-<%= document.id %>"><%= document.name %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <iframe src="<%= rails_blob_path(document.file, disposition: 'inline') %>" width="100%" height="500px"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
