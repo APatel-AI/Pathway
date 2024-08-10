@@ -2,25 +2,10 @@
   <div class="container dashboard-container">
 
     <h1 class="mt-5">Dashboard</h1>
-    <p>Welcome, <%= current_user.email %>!</p>
 
-    <% if @dependents.present? %>
-      <div class="dependents-list">
-        <% @dependents.each do |dependent| %>
-          <div class="dependent">
-            <%= link_to dependent_path(dependent) do %>
-              <% if dependent.image.attached? %>
-                <%= image_tag dependent.image, alt: dependent.first_name, class: "profile_image rounded-circle img-thumbnail mb-1" %>
-              <% else %>
-                <%= link_to image_tag("mustache.png", class: "card-img-top profile_image rounded-circle img-thumbnail mt-3"), dependent_path(dependent) %>
-
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    <% else %>
-      <%= link_to "<i class='fa-sharp fa-solid fa-plus fa-xl'></i>".html_safe, new_dependent_path, class: 'add-profile-icon' %>
+    <%= month_calendar do |date| %>
+      <%= date %>
     <% end %>
+
   </div>
 </body>
