@@ -14,6 +14,7 @@ gem 'will_paginate-bootstrap4'
 
 gem 'aws-sdk-s3', require: false
 
+gem "simple_calendar"
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

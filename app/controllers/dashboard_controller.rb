@@ -1,8 +1,11 @@
 class DashboardController < ApplicationController
   skip_before_action :authenticate_user!, only: [:greetings, :home]
 
+
   def dashboard
     @dependents = current_user.dependents
+    @documents = Document.where(dependent: @dependents).where.not(expiry_date: nil)
+
   end
 
   def home
