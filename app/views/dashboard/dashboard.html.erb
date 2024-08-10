@@ -1,11 +1,18 @@
 <body>
   <div class="container dashboard-container">
-
     <h1 class="mt-5">Dashboard</h1>
 
     <%= month_calendar do |date| %>
-      <%= date %>
+      <div>
+        <%= date.day %>
+        <% @documents.each do |document| %>
+          <% if document.expiry_date.to_date == date %>
+            <div class="document-expiry">
+              <%= document.name %> - Expires today!
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
-
   </div>
 </body>
