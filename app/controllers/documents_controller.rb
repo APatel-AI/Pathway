@@ -68,7 +68,9 @@ class DocumentsController < ApplicationController
     @dependent = Dependent.find(params[:dependent_id]) if params[:dependent_id]
   end
 
+
+
   def document_params
-    params.require(:document).permit(:expiry_date, :summary, :status,:image)
+    params.require(:document).permit(:name, :expiry_date, :summary, :status, :file)
   end
 end

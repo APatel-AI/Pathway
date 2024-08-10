@@ -11,6 +11,11 @@
   <% end %>
 
   <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
     <%= form.label :expiry_date, class: "form-label" %>
     <%= form.datetime_field :expiry_date, class: "form-control" %>
   </div>
@@ -25,13 +30,12 @@
     <%= form.text_field :status, class: "form-control" %>
   </div>
 
-  
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+  <div class="mb-3">
+    <%= form.label :file, class: "form-label" %>
+    <%= form.file_field :file, class: "form-control" %>
   </div>
-  
+
   <div>
-    <%= form.submit "Save Document", class: "btn btn-primary" %>
+    <%= form.submit "Save Document", class: "btn form_btn" %>
   </div>
 <% end %>

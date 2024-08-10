@@ -46,7 +46,8 @@
 
   <div class="mb-3">
     <%= form.label :immigration_status, class: "form-label" %>
-    <%= form.text_field :immigration_status, class: "form-control" %>
+    <%= form.select :immigration_status, options_for_select(['Citizen', 'Permanent Resident', 'Work Visa', 'Student Visa', 'Refugee', 'Other']), {}, class: "form-control" %>
+
   </div>
 
   <div class="mb-3">
