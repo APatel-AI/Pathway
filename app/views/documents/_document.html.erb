@@ -1,27 +1,31 @@
 <div id="<%= dom_id document %>" class="card mb-4">
   <div class="card-body">
     <h5 class="card-title">Document Details</h5>
-    <p class="mb-2">
+    
+    <div class="mb-3">
       <% if document.image.attached? %>
-        <%= image_tag document.image, class: "mt-3" %>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal-<%= document.id %>">
+          <%= image_tag document.image, class: "img-fluid mx-auto d-block", style: "max-width: 300px;" %>
+        </a>
       <% else %>
-        No image uploaded.
+        <p>No image uploaded.</p>
       <% end %>
-    </p>
+    </div>
 
-    <p class="mb-2">
-      <strong>Expiry Date:</strong>
-      <%= document.expiry_date.strftime("%B %d, %Y") if document.expiry_date %>
-    </p>
+   
+  </div>
+</div>
 
-    <p class="mb-2">
-      <strong>Summary:</strong>
-      <%= document.summary %>
-    </p>
-
-    <p class="mb-2">
-      <strong>Status:</strong>
-      <%= document.status %>
-    </p>
+<div class="modal fade" id="imageModal-<%= document.id %>" tabindex="-1" aria-labelledby="imageModalLabel-<%= document.id %>" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel-<%= document.id %>"><%= document.name %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= image_tag document.image, class: "img-fluid" %>
+      </div>
+    </div>
   </div>
 </div>

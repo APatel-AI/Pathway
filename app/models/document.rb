@@ -4,6 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  expiry_date :datetime
+#  name        :string
 #  status      :string
 #  summary     :string
 #  created_at  :datetime         not null
@@ -13,6 +14,8 @@
 class Document < ApplicationRecord
   belongs_to :dependent, required: true, class_name: "Dependent", foreign_key: "profile_id"
   validates :image, presence: true, allow_nil: true
+  validates :name, presence: true
+
 
   has_one_attached :image
 
