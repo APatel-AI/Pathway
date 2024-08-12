@@ -376,6 +376,7 @@ GEM
     ruby-vips (2.2.2)
       ffi (~> 1.12)
       logger
+    ruby_http_client (3.5.5)
     rubyzip (2.3.2)
     rufo (0.18.0)
     sawyer (0.9.2)
@@ -385,6 +386,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sendgrid-ruby (6.7.0)
+      ruby_http_client (~> 3.4)
     simple_calendar (3.0.4)
       rails (>= 6.1)
     simple_form (5.3.1)
@@ -486,6 +489,7 @@ DEPENDENCIES
   rspec-rails (~> 6.0.0)
   rufo
   selenium-webdriver
+  sendgrid-ruby
   simple_calendar
   specs_to_readme
   sprockets-rails

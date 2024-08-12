@@ -2,6 +2,8 @@
   <div class="container dashboard-container">
     <h1 class="mt-5">Dashboard</h1>
 
+    <%= link_to "Set Reminder", new_reminder_path, class: "btn btn-primary mb-3" %>
+
     <%= month_calendar do |date| %>
       <div>
         <%= date.day %>

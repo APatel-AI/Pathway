@@ -12,11 +12,6 @@
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div>
     <%= form.label :send_at, style: "display: block" %>
     <%= form.datetime_field :send_at %>
   </div>
@@ -27,6 +22,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Set Reminder", class: "btn btn-success" %>
   </div>
 <% end %>
