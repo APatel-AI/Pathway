@@ -3,14 +3,33 @@
     <div class="container-fluid dashboard-container">
 
       <div class="d-flex justify-content-center">
-        <%= link_to "Set Reminder", new_reminder_path, class: "btn btn-primary mb-3" %>
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#setReminderModal">
+          Set Reminder
+        </button>
       </div>
 
+      <!-- Modal Structure -->
+      <div class="modal fade" id="setReminderModal" tabindex="-1" aria-labelledby="setReminderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="setReminderModalLabel">Set Reminder</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= render '/reminders/form', reminder: Reminder.new %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="calendar" class="calendar-container mx-auto mb-5 p-0">
         <div class="calendar-header d-flex justify-content-between align-items-center mb-5 p-4">
           <h2 class="text-left text-black mb-0"><%= @start_date.strftime("%B %Y") %></h2>
 
-          <div class="d-flex"> 
+          <div class="d-flex">
             <%= link_to "Prev", "?start_date=#{(@start_date - 1.month).to_date}", class: "btn btn-outline-dark" %>
             <%= link_to "Today", "?start_date=#{Date.current}", class: "btn btn-outline-dark mx-2" %>
             <%= link_to "Next", "?start_date=#{(@start_date + 1.month).to_date}", class: "btn btn-outline-dark" %>
