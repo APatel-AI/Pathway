@@ -20,8 +20,10 @@ class DependentsController < ApplicationController
   # GET /dependents/new
   def new
     @dependent = Dependent.new
+
     add_breadcrumb "Dependents", dependents_path
     add_breadcrumb "New Dependent", new_dependent_path
+
   end
 
   # GET /dependents/1/edit

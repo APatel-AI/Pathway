@@ -1,7 +1,13 @@
-<h1>Edit Profile</h1>
-<%= render "form", dependent: @dependent %>
-<br>
-<div>
-  <br>
-  <%= link_to "Back", dependents_path ,class:"btn form_btn"%>
+<div class="container mt-4">
+  <div class="form-container">
+    <div class="card">
+      <div class="card-body">
+        <%= render "form", dependent: @dependent %>
+      </div>
+    </div>
+
+    <div>
+      <%= link_to "Back", dependents_path, class: "btn form_btn mt-2 mb-2" %>
+    </div>
+  </div>
 </div>
