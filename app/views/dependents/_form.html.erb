@@ -60,8 +60,9 @@
     <%= form.text_area :contact_info, class: "form-control", rows: 3 %>
   </div>
 
+ 
   <div>
-    <%= form.submit "Create Profile", class: "btn btn-primary" %>
+    <%= form.submit dependent.new_record? ? "Create Profile" : "Update Profile", class: "btn btn-primary" %>
   </div>
 
 <% end %>
