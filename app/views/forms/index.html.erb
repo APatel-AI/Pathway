@@ -2,7 +2,14 @@
   <div class="container mt-5">
     <h1 class="text-center mb-4">USCIS Forms</h1>
     <div class="row mb-4">
-      <div class="col-md-12">
+      <div class="col-md-12 text-center">
+        <div class="btn-group mb-3" role="group" aria-label="Category Buttons">
+          
+          <% @categories.each do |category| %>
+            <%= button_to category, forms_path(category: category), method: :get, class: 'btn btn-outline-primary', params: { category: category } %>
+          <% end %>
+        </div>
+
         <form method="get" action="<%= forms_path %>" class="form-inline d-flex justify-content-center">
           <input class="form-control mr-2" type="search" name="query" placeholder="Search forms" aria-label="Search" value="<%= params[:query] %>">
           <button class="btn btn-primary search_bar" type="submit">Search</button>
@@ -26,6 +33,4 @@
       <%= will_paginate @forms, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
   </div>
-
 </body>
-</html>
