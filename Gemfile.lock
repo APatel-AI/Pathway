@@ -338,6 +338,8 @@ GEM
     rdoc (6.7.0)
       psych (>= 4.0.0)
     redis (4.8.1)
+    redis-client (0.22.2)
+      connection_pool
     regexp_parser (2.9.2)
     reline (0.5.8)
       io-console (~> 0.5)
@@ -388,6 +390,12 @@ GEM
       websocket (~> 1.0)
     sendgrid-ruby (6.7.0)
       ruby_http_client (~> 3.4)
+    sidekiq (7.3.0)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      logger
+      rack (>= 2.2.4)
+      redis-client (>= 0.22.2)
     simple_calendar (3.0.4)
       rails (>= 6.1)
     simple_form (5.3.1)
@@ -490,6 +498,7 @@ DEPENDENCIES
   rufo
   selenium-webdriver
   sendgrid-ruby
+  sidekiq
   simple_calendar
   specs_to_readme
   sprockets-rails

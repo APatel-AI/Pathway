@@ -1,20 +1,35 @@
-<body>
-  <div class="container dashboard-container">
-    <h1 class="mt-5">Dashboard</h1>
+<div class="wrapper d-flex flex-column min-vh-100">
+  <main class="flex-grow-1">
+    <div class="container-fluid dashboard-container">
 
-    <%= link_to "Set Reminder", new_reminder_path, class: "btn btn-primary mb-3" %>
-
-    <%= month_calendar do |date| %>
-      <div>
-        <%= date.day %>
-        <% @documents.each do |document| %>
-          <% if document.expiry_date.to_date == date %>
-            <div class="document-expiry">
-              <%= document.name %> - Expires today!
-            </div>
-          <% end %>
-        <% end %>
+      <div class="d-flex justify-content-center">
+        <%= link_to "Set Reminder", new_reminder_path, class: "btn btn-primary mb-3" %>
       </div>
-    <% end %>
-  </div>
-</body>
+
+      <div id="calendar" class="calendar-container mx-auto mb-5 p-0">
+        <div class="calendar-header d-flex justify-content-between align-items-center mb-5 p-4">
+          <h2 class="text-left text-black mb-0"><%= @start_date.strftime("%B %Y") %></h2>
+
+          <div class="d-flex"> 
+            <%= link_to "Prev", "?start_date=#{(@start_date - 1.month).to_date}", class: "btn btn-outline-dark" %>
+            <%= link_to "Today", "?start_date=#{Date.current}", class: "btn btn-outline-dark mx-2" %>
+            <%= link_to "Next", "?start_date=#{(@start_date + 1.month).to_date}", class: "btn btn-outline-dark" %>
+          </div>
+        </div>
+        <%= month_calendar(month: @start_date) do |date| %>
+          <div class="calendar-day <%= 'today' if date == Date.current %> p-3">
+            <div class="date-number text-center"><%= date.day %></div>
+            <% @documents.each do |document| %>
+              <% if document.expiry_date.to_date == date %>
+                <div class="document-expiry text-center">
+                  <span class="red-dot" title="<%= document.name %> Expires Today"></span>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </main>
+</div>
