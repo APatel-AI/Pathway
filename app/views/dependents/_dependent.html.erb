@@ -2,9 +2,9 @@
   <h5 class="card-title">Profile Info.</h5>
   <p class="card-text">
     <% if dependent.image.attached? %>
-      <%= image_tag dependent.image, class: "rounded-circle img-thumbnail mb-1 profile_image", alt:"Profile Image", style:"width: 100px; height: 100px;" %>
+      <%= image_tag dependent.image, class: "avatar avatar-xxl", alt:"Profile Image" %>
     <% else %>
-      <%= image_tag "mustache.png", class: "rounded-circle img-thumbnail mb-1 profile_image", alt:"Default Profile Image", style:"width: 100px; height: 100px;" %>
+      <%= image_tag "mustache.png", class: "avatar avatar-xxl", alt:"Default Profile Image" %>
     <% end %>
   </p>
   <p class="card-text"><strong>Address:</strong> <%= dependent.address %></p>
