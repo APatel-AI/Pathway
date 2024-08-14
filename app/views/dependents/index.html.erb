@@ -8,11 +8,9 @@
         <div class="col-md-4 mb-4">
           <div class="card h-100 border border-0 shadow">
             <% if dependent.image.attached? %>
-              <%= link_to image_tag(dependent.image, class: "card-img-top profile_image rounded-circle img-thumbnail mt-3"), dependent_path(dependent) %>
+              <%= link_to image_tag(dependent.image, class: "card-img-top profile_image rounded-circle img-thumbnail mt-3 img-fluid"), dependent_path(dependent) %>
             <% else %>
-              
-                <%= link_to image_tag("mustache.png", class: "card-img-top profile_image rounded-circle img-thumbnail mt-3"), dependent_path(dependent) %> 
-
+              <%= link_to image_tag("mustache.png", class: "card-img-top profile_image rounded-circle img-thumbnail mt-3 img-fluid"), dependent_path(dependent) %>
             <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= dependent.first_name %></h5>
