@@ -3,3 +3,14 @@
   color: #000000; 
   text-decoration: none; 
 }
+
+.profile_image{
+  height: 50px;
+  width: auto;
+}
+
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
