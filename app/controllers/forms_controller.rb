@@ -16,12 +16,12 @@ class FormsController < ApplicationController
 
     @categories = [
       "Forms",
-      "Adoptions-Based Forms",
-      "Citizenship and Naturalization-Based Forms",
-      "Employment-based Forms",
-      "Family-based Forms",
-      "Green Card-based Forms",
-      "Humanitarian Benefits-based Forms",
+      "Adoptions",
+      "Citizenship and Naturalization",
+      "Employment",
+      "Family",
+      "Green Card",
+      "Humanitarian Benefits",
 
     ]
 
@@ -33,6 +33,11 @@ class FormsController < ApplicationController
       start = pager.offset
       pager.replace forms[start, pager.per_page]
     end
+
+    @breadcrumbs = [
+      { name: "Home", url: root_path },
+      { name: "Forms", url: forms_path }
+    ]
   end
 
   private
@@ -40,17 +45,17 @@ class FormsController < ApplicationController
   def categorize_form(form_name)
     case form_name.downcase
     when /adoption/
-      "Adoptions-Based Forms"
+      "Adoptions"
     when /citizenship|naturalization/
-      "Citizenship and Naturalization-Based Forms"
+      "Citizenship and Naturalization"
     when /employment/
-      "Employment-based Forms"
+      "Employment"
     when /family/
-      "Family-based Forms"
+      "Family"
     when /green card|permanent resident/
-      "Green Card-based Forms"
+      "Green Card"
     when /humanitarian|benefit/
-      "Humanitarian Benefits-based Forms"
+      "Humanitarian Benefits"
     else
       "Forms"
     end

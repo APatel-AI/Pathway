@@ -1,8 +1,12 @@
 .uscis-view{
-  height: 130vh;
+  height: 150vh;
 }
 .card {
   height: 100%;
+}
+
+.card {
+  transition: transform 0.2s;
 }
 .card-body {
   display: flex;
@@ -24,4 +28,22 @@
 .search_bar{
   color:black;
   width: 50%;
+  margin-right: 5px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-title {
+  color: #495057; 
+}
+
+.btn-outline-secondary {
+  color: #6c757d; 
+  border-color: #6c757d; 
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e9ecef; 
 }
