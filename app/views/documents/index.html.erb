@@ -1,10 +1,9 @@
 <h1>Documents</h1>
-
 <div id="documents">
   <% @documents.each do |document| %>
     <%= render document %>
     <p>
-      <%= link_to "Show this document", document %>
+      <%= link_to "Show this document", @document %>
     </p>
   <% end %>
 </div>
