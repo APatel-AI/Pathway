@@ -6,6 +6,7 @@ gem "devise"
 gem "image_processing"
 gem "bullet"
 
+gem 'blazer'
 
 gem "nokogiri"
 gem 'httparty'
