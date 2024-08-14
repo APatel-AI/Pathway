@@ -1,5 +1,5 @@
 .uscis-view{
-  height: 150vh;
+  height: 200vh;
 }
 .card {
   height: 100%;
@@ -31,9 +31,9 @@
   margin-right: 5px;
 }
 
-.card:hover {
+/* .card:hover {
   transform: scale(1.02);
-}
+} */
 
 .card-title {
   color: #495057; 
