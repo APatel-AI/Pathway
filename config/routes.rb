@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "dashboard#dashboard"
   get "/landing", to: "dashboard#greetings"
   get "/forms", to: "forms#index"
+  mount Blazer::Engine, at: "blazer"
 
 
   resources :reminders

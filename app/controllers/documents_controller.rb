@@ -1,24 +1,32 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: %i[show edit update destroy]
   before_action :set_dependent, only: %i[new create]
-
+  before_action :set_breadcrumbs, only: %i[index show new edit]
 
   # GET /documents or /documents.json
   def index
     @documents = Document.all
+    add_breadcrumb "Documents", documents_path
   end
 
   # GET /documents/1 or /documents/1.json
   def show
+    add_breadcrumb "Documents", documents_path
+    add_breadcrumb @document.name, document_path(@document)
   end
 
   # GET /documents/new
   def new
     @document = @dependent ? @dependent.documents.build : Document.new
+    add_breadcrumb "Documents", documents_path
+    add_breadcrumb "New Document", new_dependent_document_path
   end
 
   # GET /documents/1/edit
   def edit
+    add_breadcrumb "Documents", documents_path
+    add_breadcrumb @document.name, document_path(@document)
+    add_breadcrumb "Edit Document", edit_dependent_document_path(@document)
   end
 
   # POST /documents or /documents.json
@@ -68,7 +76,13 @@ class DocumentsController < ApplicationController
     @dependent = Dependent.find(params[:dependent_id]) if params[:dependent_id]
   end
 
+  def set_breadcrumbs
+    @breadcrumbs = []
+  end
 
+  def add_breadcrumb(content, href = nil)
+    @breadcrumbs << { content: content, href: href }
+  end
 
   def document_params
     params.require(:document).permit(:name, :expiry_date, :summary, :status, :file)

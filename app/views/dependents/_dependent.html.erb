@@ -4,7 +4,7 @@
     <% if dependent.image.attached? %>
       <%= image_tag dependent.image, class: "rounded-circle img-thumbnail mb-1 profile_image", alt:"Profile Image", style:"width: 100px; height: 100px;" %>
     <% else %>
-      No image uploaded.
+      <%= image_tag "mustache.png", class: "rounded-circle img-thumbnail mb-1 profile_image", alt:"Default Profile Image", style:"width: 100px; height: 100px;" %>
     <% end %>
   </p>
   <p class="card-text"><strong>Address:</strong> <%= dependent.address %></p>

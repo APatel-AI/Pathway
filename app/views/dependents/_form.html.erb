@@ -47,7 +47,6 @@
   <div class="mb-3">
     <%= form.label :immigration_status, class: "form-label" %>
     <%= form.select :immigration_status, options_for_select(['Citizen', 'Permanent Resident', 'Work Visa', 'Student Visa', 'Refugee', 'Other']), {}, class: "form-control" %>
-
   </div>
 
   <div class="mb-3">
@@ -61,7 +60,7 @@
   </div>
 
   <div>
-    <%= form.submit "Create Profile", class: "btn btn-primary" %>
+    <%= form.submit dependent.new_record? ? "Create Profile" : "Update Profile", class: "btn btn-primary" %>
   </div>
 
 <% end %>

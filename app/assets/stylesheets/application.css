@@ -15,7 +15,6 @@
  */
 
 /* LANDING PAGE */
-
 .landing-page {
   height: 100vh;
 }
@@ -32,10 +31,19 @@
   text-transform: uppercase;
 }
 
+/* breadcrumbs */
+.breadcrumb {
+  background-color: transparent;
+  font-size: 14px;
+}
+
+.breadcrumb-item.active {
+  color: #6c757d;
+}
 
 
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Small */
 @media only screen and (max-width: 768px){
   .hero h1 {
     font-size: 4rem;
@@ -51,7 +59,7 @@
 
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
+/* Medium */
 @media only screen and (min-width: 768px)  {
   .hero {
     height: 60vh;
@@ -70,7 +78,7 @@
   }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
+/* Large */
 @media only screen and (min-width: 992px) {
   .hero {
     height: 100vh;
@@ -89,7 +97,7 @@
   }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */ 
+/* Extra large */ 
 @media (min-width: 1200px) {
   .hero {
     height: 80vh;

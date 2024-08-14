@@ -1,8 +1,7 @@
-<%= form_with(model: reminder) do |form| %>
+<%= form_with(model: reminder, local: true) do |form| %>
   <% if reminder.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(reminder.errors.count, "error") %> prohibited this reminder from being saved:</h2>
-
       <ul>
         <% reminder.errors.each do |error| %>
           <li><%= error.full_message %></li>

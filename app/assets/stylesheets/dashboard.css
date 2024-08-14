@@ -1,9 +1,102 @@
+main {
+  height: 150vh; 
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+
+
+
+.table th,
+.table td {
+  border: 1px solid #000000; 
+  
+}
+
+.table th {
+  background-color: #ffffff;
+  color: black;
+}
+
+.table-striped tbody tr:nth-of-type(odd) td {
+  background-color: #ffffff; 
+}
+
+.table-striped tbody tr:nth-of-type(even) td {
+  background-color: #ffffff; 
+}
+
+.red-dot {
+  display: inline-block;
+  width: 30px; 
+  height: 30px; 
+  background-color: #dc3545; 
+  border-radius: 50%; 
+  position: relative; 
+  margin: 0 auto; 
+}
+
+.red-dot:hover::after {
+  content: attr(title); 
+  position: absolute;
+  bottom: 100%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  background-color: rgb(0, 0, 0); 
+  color: #fff; 
+  padding: 5px; 
+  border-radius: 5px; 
+  white-space: nowrap; 
+  z-index: 10; 
+  opacity: 0.9;
+  transition: opacity 0.2s; 
+}
+
+.calendar-container {
+  max-width: 1200px; 
+  background-color: #ffffff; 
+  padding: 20px;
+}
+
+.calendar-day {
+  min-height: 150px; 
+  background-color: #ffffff; 
+  transition: background-color 0.3s ease; 
+  flex: 1 0 14%; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+}
+
+.calendar-day:hover {
+  background-color: #3c3c3c;
+}
+
+.today {
+  background-color: #adadad; 
+ 
+}
+
+.date-number {
+  font-size: 1.25rem; 
+  font-weight: 700; 
+  margin-bottom: 5px; 
+  color: #000000; 
+}
 
 .document-expiry {
-  background-color: #ff0000;
-  border: 1px solid #ff0000;
-  padding: 5px;
-  margin-top: 5px;
-  border-radius: 5px;
-  font-weight: bold;
+  font-size: 0.9rem; 
+  color: #dc3545; 
+  font-weight: 600; 
+}
+
+.btn-outline-primary {
+  font-size: 1rem; 
+  padding: 5px 15px; 
+  color: #ffffff; 
+  border-color: #007bff; 
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff; 
 }

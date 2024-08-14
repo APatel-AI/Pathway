@@ -3,6 +3,9 @@ class DashboardController < ApplicationController
 
 
   def dashboard
+    @start_date = params[:start_date] ? Date.parse(params[:start_date]) : Date.current.beginning_of_month
+    @date_range = (@start_date.beginning_of_month..@start_date.end_of_month).to_a
+
     @dependents = current_user.dependents
     @documents = Document.where(dependent: @dependents).where.not(expiry_date: nil)
 
