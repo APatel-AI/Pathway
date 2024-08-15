@@ -1,41 +1,46 @@
-<%= form_with(model: [@dependent, @document], local: true, html: { multipart: true }) do |form| %>
-  <% if @document.errors.any? %>
-    <div class="alert alert-danger">
-      <h4><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h4>
-      <ul>
-        <% @document.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<h1 class="mb-4 text-center">Editing Document</h1>
+
+<div class="form-container">
+  <%= form_with(model: [@dependent, @document], local: true, html: { multipart: true }) do |form| %>
+    <% if @document.errors.any? %>
+      <div class="alert alert-danger">
+        <h4><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h4>
+        <ul>
+          <% @document.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :expiry_date, class: "form-label" %>
+      <%= form.datetime_field :expiry_date, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :summary, class: "form-label" %>
+      <%= form.text_field :summary, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :status, class: "form-label" %>
+      <%= form.text_field :status, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :file, class: "form-label" %>
+      <%= form.file_field :file, class: "form-control" %>
+    </div>
+
+    <div>
+      <%= form.submit "Save Document", class: "btn form_btn" %>
+      <%= link_to "Back to documents", documents_path, class: "btn form_btn" %>
     </div>
   <% end %>
-
-  <div class="mb-3">
-    <%= form.label :name, class: "form-label" %>
-    <%= form.text_field :name, class: "form-control" %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :expiry_date, class: "form-label" %>
-    <%= form.datetime_field :expiry_date, class: "form-control" %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :summary, class: "form-label" %>
-    <%= form.text_field :summary, class: "form-control" %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :status, class: "form-label" %>
-    <%= form.text_field :status, class: "form-control" %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :file, class: "form-label" %>
-    <%= form.file_field :file, class: "form-control" %>
-  </div>
-
-  <div>
-    <%= form.submit "Save Document", class: "btn form_btn" %>
-  </div>
-<% end %>
+</div>

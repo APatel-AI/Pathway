@@ -1,49 +1,86 @@
-.uscis-view{
-  height: 200vh;
+.search-group {
+  max-width: 500px;
+  width: 100%;
 }
-.card {
-  height: 100%;
+
+.search-bar {
+  border-radius: 0;
+  border: 2px solid #ced4da;
+  height: 45px;
+  transition: none; 
+}
+
+.btn-search {
+  background-color: #000000; 
+  border: 2px solid #000000; 
+  border-left: none;
+  color: #ffffff; 
+  height: 45px;
+  border-radius: 0;
+  padding: 0 20px;
+  transition: none; 
+}
+
+.btn-search:hover {
+  background-color: #000000; 
+  color: #ffffff; 
+  border: 2px solid #000000; 
+}
+
+.btn-search i {
+  font-size: 1.2rem;
+  color: #ffffff; 
 }
 
 .card {
-  transition: transform 0.2s;
+  height: 125vh;
+  transition: transform 0.2s; 
 }
+
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .card-title {
   font-size: 1.25rem;
   font-weight: bold;
 }
+
 .card-text {
   font-size: 1rem;
   flex-grow: 1;
 }
-.btn-secondary {
-  align-self: flex-end;
-}
-
-.search_bar{
-  color:black;
-  width: 50%;
-  margin-right: 5px;
-}
-
-/* .card:hover {
-  transform: scale(1.02);
-} */
-
-.card-title {
-  color: #495057; 
-}
 
 .btn-outline-secondary {
-  color: #6c757d; 
-  border-color: #6c757d; 
+  color: #6c757d;
+  border-color: #6c757d;
 }
 
 .btn-outline-secondary:hover {
-  background-color: #e9ecef; 
+  background-color: #e9ecef;
+}
+
+@media (min-width: 768px) {
+  .search_bar {
+    width: 50%;
+    margin-right: 5px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-group {
+    max-width: 100%;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
 }

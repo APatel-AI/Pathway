@@ -10,6 +10,7 @@
 #  first_name             :string
 #  immigration_status     :string
 #  last_name              :string
+#  notes                  :text
 #  relationship           :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -19,5 +20,6 @@ class Dependent < ApplicationRecord
   belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
   has_many  :documents, class_name: "Document", foreign_key: "profile_id", dependent: :destroy
   has_one_attached :image
+  validates :notes, length: { maximum: 500 }
 
 end

@@ -1,9 +1,6 @@
 <h1>Documents</h1>
-<div id="documents">
+<div id="documents" style="height: 100vh;">
   <% @documents.each do |document| %>
     <%= render document %>
-    <p>
-      <%= link_to "Show this document", @document %>
-    </p>
   <% end %>
 </div>

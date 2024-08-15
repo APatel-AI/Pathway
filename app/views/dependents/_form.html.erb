@@ -59,6 +59,11 @@
     <%= form.text_area :contact_info, class: "form-control", rows: 3 %>
   </div>
 
+  <div class="mb-3">
+    <%= form.label :notes, class: "form-label" %>
+    <%= form.text_area :notes, class: "form-control" %>
+  </div>
+
   <div>
     <%= form.submit dependent.new_record? ? "Create Profile" : "Update Profile", class: "btn btn-primary" %>
   </div>
