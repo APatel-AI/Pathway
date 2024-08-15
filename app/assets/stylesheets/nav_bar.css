@@ -11,7 +11,9 @@
 }
 .nav-item :hover{
   text-decoration: underline;
+  color: rgb(29, 29, 29);
   animation-duration: 20s;
+  
 }
 
 .pathway_logo{
