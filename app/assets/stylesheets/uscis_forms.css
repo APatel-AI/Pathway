@@ -33,9 +33,10 @@
 }
 
 .card {
-  height: 125vh;
+  height: auto;
   transition: transform 0.2s; 
 }
+
 
 .card-body {
   display: flex;
