@@ -1,12 +1,28 @@
 # Pathway
-
-## Overview
 Pathway is a user-friendly web application designed to empower your immigration journey.  From feeling overwhelmed to becoming organized, Pathway helps you manage immigration documents for yourself and your family.  Unravel complex regulations with clear and concise summaries.  Stay ahead of deadlines with a integrated calendar and reminder system.  Navigate the immigration process with confidence - Pathway is your one-stop shop for a smooth and organized journey.
 
+## Table of Contents
+- [Core Features](#core-features)
+- [Limitations](#limitations)
+- [Technologies & Services Used](#technologies--services-used)
+- [Configuration](#configuration)
+- [Installation](#installation)
+- [Contribution Guidelines](#contribution-guidelines)
+- [FAQ](#faq)
+
+
 ## Core Features
+#### USCIS Forms Directory
+Access a comprehensive directory of all USCIS forms with a user-friendly interface that simplifies searching and navigating through the forms.
 
-## Technologies & Services Used
+#### Family Member Profiles
+Create and manage individual profiles for your family members. Each profile allows you to store and organize essential information related to their immigration process.
 
+#### Profile Notes
+Add and keep detailed notes within each family member's profile to track important information, updates, or reminders.
+
+#### Reminder System
+Set reminders for critical dates or actions, and receive email notifications at specified times to ensure you never miss an important deadline.
 
 ## Installation Guide
 
