@@ -7,7 +7,6 @@ gem "image_processing"
 gem "bullet"
 
 gem 'blazer'
-gem 'bundler', '~> 2.5'
 
 gem "nokogiri"
 gem 'httparty'
