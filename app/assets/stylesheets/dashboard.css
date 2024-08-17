@@ -1,68 +1,51 @@
 main {
-  height: 150vh; 
+  height: auto; 
   font-family: "Hanken Grotesk", sans-serif;
+  background-color: #181818;
 }
-
 
 .table th,
 .table td {
-  border: 1px solid #000000; 
-  
+  border: none; 
 }
 
 .table th {
-  background-color: #ffffff;
-  color: black;
+  background-color: #181818;
+  color: white;
 }
 
 .table-striped tbody tr:nth-of-type(odd) td {
-  background-color: #ffffff; 
+  background-color: #181818; 
 }
 
 .table-striped tbody tr:nth-of-type(even) td {
-  background-color: #ffffff; 
-}
-
-.red-dot {
-  display: inline-block;
-  width: 30px; 
-  height: 30px; 
-  background-color: #dc3545; 
-  border-radius: 50%; 
-  position: relative; 
-  margin: 0 auto; 
-}
-
-.red-dot:hover::after {
-  content: attr(title); 
-  position: absolute;
-  bottom: 100%; 
-  left: 50%; 
-  transform: translateX(-50%); 
-  background-color: rgb(0, 0, 0); 
-  color: #fff; 
-  padding: 5px; 
-  border-radius: 5px; 
-  white-space: nowrap; 
-  z-index: 10; 
-  opacity: 0.9;
-  transition: opacity 0.2s; 
+  background-color: #181818; 
 }
 
 .calendar-container {
-  max-width: 1200px; 
-  background-color: #ffffff; 
+  max-width: 1200px;
+  background-color: #181818;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .calendar-day {
   min-height: 150px; 
-  background-color: #ffffff; 
   transition: background-color 0.3s ease; 
   flex: 1 0 14%; 
   display: flex; 
   flex-direction: column; 
   justify-content: space-between; 
+  overflow: hidden;
+  color: white;
+}
+
+.calendar-day:nth-child(odd) {
+  background-color: #2b2b2b;
+}
+
+.calendar-day:nth-child(even) {
+  background-color: #1a1a1a;
 }
 
 .calendar-day:hover {
@@ -70,21 +53,25 @@ main {
 }
 
 .today {
-  background-color: #adadad; 
- 
+  background-color: #c7c7c7; 
 }
 
 .date-number {
-  font-size: 1.25rem; 
-  font-weight: 700; 
-  margin-bottom: 5px; 
-  color: #000000; 
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #cfcfcf;
 }
 
 .document-expiry {
-  font-size: 0.9rem; 
-  color: #dc3545; 
-  font-weight: 600; 
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: #dc35469d;
+  font-weight: 600;
+  margin-top: auto;
+  text-align: center;
+  word-wrap: break-word; 
+  overflow: hidden;
 }
 
 .btn-outline-primary {
@@ -97,4 +84,40 @@ main {
 .btn-outline-primary:hover {
   background-color: #007bff;
   color: #fff; 
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header h2 {
+  color: white;
+  margin: 0;
+}
+
+.calendar-header .btn-outline-dark {
+  color: white;
+  border-color: #505050;
+}
+
+.calendar-header .btn-outline-dark:hover {
+  background-color: #505050;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .calendar-day {
+    min-height: 100px; 
+    flex: 1 0 48%; 
+  }
+}
+
+@media (max-width: 576px) {
+  .calendar-day {
+    min-height: 75px;
+    flex: 1 0 98%;
+  }
 }
