@@ -92,6 +92,6 @@ class DependentsController < ApplicationController
   end
 
   def dependent_params
-    params.require(:dependent).permit(:user_id, :image, :address, :relationship, :first_name, :last_name, :date_of_birth, :immigration_status, :country_of_citizenship, :contact_info)
+    params.require(:dependent).permit(:user_id, :image, :address, :relationship, :first_name, :last_name, :date_of_birth, :immigration_status, :country_of_citizenship, :contact_info, :notes)
   end
 end

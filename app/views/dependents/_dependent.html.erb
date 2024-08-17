@@ -1,6 +1,5 @@
 <div id="<%= dom_id(dependent) %>" class="card-body">
   <div class="d-flex flex-column flex-md-row align-items-center mb-4">
-    <!-- Profile Image -->
     <div class="text-center text-md-start mb-4 mb-md-0 me-md-4">
       <% if dependent.image.attached? %>
         <%= image_tag dependent.image, class: "avatar avatar-xxl rounded-circle border", alt: "Profile Image", style: "max-width: 150px; max-height: 150px;" %>
@@ -8,7 +7,6 @@
         <%= image_tag "mustache.png", class: "avatar avatar-xxl rounded-circle border", alt: "Default Profile Image", style: "max-width: 150px; max-height: 150px;" %>
       <% end %>
     </div>
-    <!-- Profile Info -->
     <div>
       <h5 class="card-title mb-3">Profile Info</h5>
       <dl class="row mb-0">
@@ -35,6 +33,9 @@
 
         <dt class="col-sm-4"><strong>Contact Info:</strong></dt>
         <dd class="col-sm-8"><%= dependent.contact_info %></dd>
+        
+        <dt class="col-sm-4"><strong>Notes:</strong></dt>
+        <dd class="col-sm-8"><%= dependent.notes %></dd>
       </dl>
     </div>
   </div>
