@@ -1,12 +1,28 @@
-<h1>Reminders</h1>
+<div class="container my-4">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2 class="display-4 text-black mb-4">Your Reminders</h2>
+    </div>
+  </div>
 
-<div id="reminders">
-  <% @reminders.each do |reminder| %>
-    <%= render reminder %>
-    <p>
-      <%= link_to "Show this reminder", reminder %>
-    </p>
-  <% end %>
+  <div id="reminders" class="row">
+    <% @reminders.each do |reminder| %>
+      <div class="col-md-6 col-lg-4 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <%= render reminder %>
+            <p class="text-right">
+              <%= link_to "View Details", reminder, class: "btn form_btn btn-sm " %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-12 text-center">
+      <%= link_to "Add New Reminder", new_reminder_path, class: "btn form_btn mt-4 w-50" %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New reminder", new_reminder_path %>
