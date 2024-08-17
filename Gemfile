@@ -6,6 +6,7 @@ ruby "3.2.1"
 
 gem "devise"
 gem "image_processing"
+
 gem "bullet"
 
 gem 'blazer'
