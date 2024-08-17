@@ -40,7 +40,7 @@
 
     <div>
       <%= form.submit "Save Document", class: "btn form_btn" %>
-      <%= link_to "Back to documents", documents_path, class: "btn form_btn" %>
+      <%= link_to "Back to documents", dependent_path(@dependent), class: "btn form_btn" %>
     </div>
   <% end %>
 </div>

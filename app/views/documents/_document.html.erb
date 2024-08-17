@@ -1,30 +1,31 @@
 <div class="row mb-3">
-  <div class="col mb-3">
-    <div class="d-flex justify-content-between align-items-center">
-
+  <div class="col-12">
+    <div class="d-flex justify-content-between align-items-center mb-2">
       <div class="d-flex align-items-center">
         <h4 class="mb-0 me-2">
-          <%= link_to document.name, "#", class: "text-decoration-none text-black", data: { bs_toggle: "modal", bs_target: document.file.content_type == "application/pdf" ? "#pdfModal-#{document.id}" : "#imageModal-#{document.id}" } %>
+          <%= link_to document.name, "#", class: "text-decoration-none text-dark", data: { bs_toggle: "modal", bs_target: document.file.content_type == "application/pdf" ? "#pdfModal-#{document.id}" : "#imageModal-#{document.id}" } %>
         </h4>
         <%= link_to "<i class='fas fa-edit'></i>".html_safe, edit_document_path(document), class: "btn btn-secondary me-2", title: "Edit this document" %>
-        <%= button_to "<i class='fas fa-trash'></i>".html_safe, document, method: :delete, class: "btn btn-danger", title: "Destroy this document" %>
+        <%= button_to "<i class='fas fa-trash'></i>".html_safe, document, method: :delete, class: "btn btn-danger", title: "Delete this document", data: { confirm: "Are you sure you want to delete this document?" } %>
       </div>
     </div>
-  </div>
-
-  <% if document.file.attached? && document.file.content_type == "application/pdf" %>
-    <div class="modal fade" id="pdfModal-<%= document.id %>" tabindex="-1" aria-labelledby="pdfModalLabel-<%= document.id %>" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="pdfModalLabel-<%= document.id %>"><%= document.name %></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <iframe src="<%= rails_blob_path(document.file, disposition: 'inline') %>" width="100%" height="500px"></iframe>
+    
+    <% if document.file.attached? && document.file.content_type == "application/pdf" %>
+      <div class="modal fade" id="pdfModal-<%= document.id %>" tabindex="-1" aria-labelledby="pdfModalLabel-<%= document.id %>" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="pdfModalLabel-<%= document.id %>"><%= document.name %></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <iframe src="<%= rails_blob_path(document.file, disposition: 'inline') %>" width="100%" height="500px" style="border: none;"></iframe>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+
+  
+  </div>
 </div>
