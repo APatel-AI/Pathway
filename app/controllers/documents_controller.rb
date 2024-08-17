@@ -5,7 +5,7 @@ class DocumentsController < ApplicationController
 
   # GET /documents or /documents.json
   def index
-    @documents = Document.all
+    @documents = Document.includes(:file_attachment).all
     add_breadcrumb "Documents", documents_path
   end
 
@@ -24,18 +24,20 @@ class DocumentsController < ApplicationController
 
   # GET /documents/1/edit
   def edit
+    @dependent = @document.dependent
     add_breadcrumb "Documents", documents_path
     add_breadcrumb @document.name, document_path(@document)
     add_breadcrumb "Edit Document", edit_dependent_document_path(@document)
   end
+  
 
   # POST /documents or /documents.json
   def create
     @document = @dependent ? @dependent.documents.build(document_params) : Document.new(document_params)
-
+  
     respond_to do |format|
       if @document.save
-        format.html { redirect_to document_url(@document), notice: "Document was successfully created." }
+        format.html { redirect_to dependent_path(@dependent), notice: "Document was successfully created." }
         format.json { render :show, status: :created, location: @document }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -48,7 +50,7 @@ class DocumentsController < ApplicationController
   def update
     respond_to do |format|
       if @document.update(document_params)
-        format.html { redirect_to document_url(@document), notice: "Document was successfully updated." }
+        format.html { redirect_to dependent_path(@dependent), notice: "Document was successfully updated." }
         format.json { render :show, status: :ok, location: @document }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,7 +58,7 @@ class DocumentsController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /documents/1 or /documents/1.json
   def destroy
     @document.destroy!
@@ -69,7 +71,8 @@ class DocumentsController < ApplicationController
   private
 
   def set_document
-    @document = Document.find(params[:id])
+    @document = Document.includes(:file_attachment).find(params[:id])
+    @dependent = @document.dependent
   end
 
   def set_dependent

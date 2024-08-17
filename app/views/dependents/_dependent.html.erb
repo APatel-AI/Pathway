@@ -1,18 +1,41 @@
-<div id="<%= dom_id dependent %>" class="card-body">
-  <h5 class="card-title">Profile Info.</h5>
-  <p class="card-text">
-    <% if dependent.image.attached? %>
-      <%= image_tag dependent.image, class: "avatar avatar-xxl", alt:"Profile Image" %>
-    <% else %>
-      <%= image_tag "mustache.png", class: "avatar avatar-xxl", alt:"Default Profile Image" %>
-    <% end %>
-  </p>
-  <p class="card-text"><strong>Address:</strong> <%= dependent.address %></p>
-  <p class="card-text"><strong>Relationship:</strong> <%= dependent.relationship %></p>
-  <p class="card-text"><strong>First Name:</strong> <%= dependent.first_name %></p>
-  <p class="card-text"><strong>Last Name:</strong> <%= dependent.last_name %></p>
-  <p class="card-text"><strong>Date of Birth:</strong> <%= dependent.date_of_birth %></p>
-  <p class="card-text"><strong>Immigration Status:</strong> <%= dependent.immigration_status %></p>
-  <p class="card-text"><strong>Country of Citizenship:</strong> <%= dependent.country_of_citizenship %></p>
-  <p class="card-text"><strong>Contact Info:</strong> <%= dependent.contact_info %></p>
+<div id="<%= dom_id(dependent) %>" class="card-body">
+  <div class="d-flex flex-column flex-md-row align-items-center mb-4">
+    <!-- Profile Image -->
+    <div class="text-center text-md-start mb-4 mb-md-0 me-md-4">
+      <% if dependent.image.attached? %>
+        <%= image_tag dependent.image, class: "avatar avatar-xxl rounded-circle border", alt: "Profile Image", style: "max-width: 150px; max-height: 150px;" %>
+      <% else %>
+        <%= image_tag "mustache.png", class: "avatar avatar-xxl rounded-circle border", alt: "Default Profile Image", style: "max-width: 150px; max-height: 150px;" %>
+      <% end %>
+    </div>
+    <!-- Profile Info -->
+    <div>
+      <h5 class="card-title mb-3">Profile Info</h5>
+      <dl class="row mb-0">
+        <dt class="col-sm-4"><strong>Address:</strong></dt>
+        <dd class="col-sm-8"><%= dependent.address %></dd>
+
+        <dt class="col-sm-4"><strong>Relationship:</strong></dt>
+        <dd class="col-sm-8"><%= dependent.relationship %></dd>
+
+        <dt class="col-sm-4"><strong>First Name:</strong></dt>
+        <dd class="col-sm-8"><%= dependent.first_name %></dd>
+
+        <dt class="col-sm-4"><strong>Last Name:</strong></dt>
+        <dd class="col-sm-8"><%= dependent.last_name %></dd>
+
+        <dt class="col-sm-4"><strong>Date of Birth:</strong></dt>
+        <dd class="col-sm-8"><%= dependent.date_of_birth %></dd>
+
+        <dt class="col-sm-4"><strong>Immigration Status:</strong></dt>
+        <dd class="col-sm-8"><%= dependent.immigration_status %></dd>
+
+        <dt class="col-sm-4"><strong>Country of Citizenship:</strong></dt>
+        <dd class="col-sm-8"><%= dependent.country_of_citizenship %></dd>
+
+        <dt class="col-sm-4"><strong>Contact Info:</strong></dt>
+        <dd class="col-sm-8"><%= dependent.contact_info %></dd>
+      </dl>
+    </div>
+  </div>
 </div>

@@ -18,6 +18,9 @@ class Document < ApplicationRecord
 
   has_one_attached :file
 
+  scope :with_file_attachment, -> { includes(:file_attachment) }
+
+
   private
 
   validate :correct_file_format

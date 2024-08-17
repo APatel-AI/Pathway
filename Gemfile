@@ -8,6 +8,7 @@ gem "bullet"
 
 gem 'blazer'
 
+
 gem "nokogiri"
 gem 'httparty'
 
