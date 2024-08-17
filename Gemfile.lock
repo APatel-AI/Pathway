@@ -481,6 +481,7 @@ DEPENDENCIES
   blazer
   bootsnap
   bullet
+  bundler (~> 2.5)
   capybara
   debug
   devise
