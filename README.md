@@ -12,16 +12,30 @@ Pathway is a user-friendly web application designed to empower your immigration 
 
 ## Main Features
 #### **USCIS Forms Directory**
-Access a comprehensive directory of all USCIS forms with a user-friendly interface that simplifies searching and navigating through the forms.
+Access a minimal directory of all USCIS forms with a user-friendly interface that simplifies searching and navigating through the forms.
+
+https://github.com/user-attachments/assets/90144c48-7c99-46f4-996b-7e681d52d523
+
 
 #### **Family Member Profiles**
 Create and manage individual profiles for your family members. Each profile allows you to store and organize essential information related to their immigration process.
 
-#### **Profile Notes**
+https://github.com/user-attachments/assets/75ec088f-6092-49fd-abc1-e6d666c717cd
+
+
+#### **Profile Notes and Upload Documents**
 Add and keep detailed notes within each family member's profile to track important information, updates, or reminders.
+
+
+https://github.com/user-attachments/assets/5eef8303-d812-441d-b321-1837a4c7d122
+
 
 #### **Reminder System**
 Set reminders for critical dates or actions, and receive email notifications at specified times to ensure you never miss an important deadline.
+
+
+https://github.com/user-attachments/assets/74097596-38aa-49ed-b2d7-871bb296723b
+
 
 
 ## Technologies & Services Used
