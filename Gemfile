@@ -12,6 +12,7 @@ gem "bullet"
 gem 'blazer'
 
 gem "nokogiri"
+
 gem 'httparty'
 
 gem 'will_paginate', '~> 3.3'
