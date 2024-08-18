@@ -3,26 +3,35 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
 
-
+# Authentication
 gem "devise"
+
+# Image processing
 gem "image_processing"
 
+# Performance
 gem "bullet"
 
+# Data visualization and SQL analysis
 gem 'blazer'
 
+# Web scraping
 gem "nokogiri"
 
+# HTTP client
 gem 'httparty'
 
+# Pagination
 gem 'will_paginate', '~> 3.3'
-
 gem 'will_paginate-bootstrap4'
 
+# Amazon Web Service SDK for S3 (storage)
 gem 'aws-sdk-s3', require: false
 
+# Calendar Functionality
 gem "simple_calendar"
 
+# Email 
 gem 'sendgrid-ruby'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
