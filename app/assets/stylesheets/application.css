@@ -16,7 +16,7 @@
 
 /* LANDING PAGE */
 .landing-page {
-  height: 110vh;
+  height: 100%;
 }
 .hero {
   height: 50vh;
@@ -40,6 +40,8 @@
 .breadcrumb-item.active {
   color: #6c757d;
 }
+
+
 
 
 
@@ -114,4 +116,44 @@
   .hero p {
     font-size: 1rem;
   }
+}
+
+
+.intro-message {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.intro-message h3 {
+  color: #333;
+}
+
+.intro-message p {
+  color: #666;
+}
+
+.feature-videos .card {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-videos .card-body {
+  flex: 1;
+}
+
+.feature-videos .card-img-top {
+  object-fit:contain;
+}
+
+.feature-videos .card-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 15px;
+  font-weight: lighter;
+  font-size: 1.1rem;
 }

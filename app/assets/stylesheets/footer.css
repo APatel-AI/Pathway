@@ -1,12 +1,16 @@
-ul {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
 }
 
 .footer-section {
   background: #151414;
   position: relative;
+  width: 100%;
 }
 
 .footer-content {
@@ -82,18 +86,17 @@ ul {
   color: #878787;
 }
 
-/* Responsivness */
-
+/* Responsiveness */
 @media only screen and (max-width: 768px) {
   .footer-widget .footer-text {
     display: none;
   }
-  
+
   .footer-social-icon {
     text-align: center;
     margin-bottom: 10px;
   }
-  
+
   .copyright-text {
     text-align: center;
     margin-top: 10px;
