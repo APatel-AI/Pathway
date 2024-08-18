@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: reminders
@@ -10,6 +12,5 @@
 #  user_id    :integer
 #
 class Reminder < ApplicationRecord
-  belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
-
+  belongs_to :user, required: true, class_name: 'User', foreign_key: 'user_id'
 end

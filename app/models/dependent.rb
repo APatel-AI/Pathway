@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: dependents
@@ -17,9 +19,8 @@
 #  user_id                :integer
 #
 class Dependent < ApplicationRecord
-  belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
-  has_many  :documents, class_name: "Document", foreign_key: "profile_id", dependent: :destroy
+  belongs_to :user, required: true, class_name: 'User', foreign_key: 'user_id'
+  has_many :documents, class_name: 'Document', foreign_key: 'profile_id', dependent: :destroy
   has_one_attached :image
   validates :notes, length: { maximum: 500 }
-
 end

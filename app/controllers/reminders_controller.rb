@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemindersController < ApplicationController
   before_action :set_reminder, only: %i[show edit update destroy]
 
@@ -7,8 +9,7 @@ class RemindersController < ApplicationController
   end
 
   # GET /reminders/1 or /reminders/1.json
-  def show
-  end
+  def show; end
 
   # GET /reminders/new
   def new
@@ -16,8 +17,7 @@ class RemindersController < ApplicationController
   end
 
   # GET /reminders/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /reminders or /reminders.json
   def create
@@ -63,7 +63,7 @@ class RemindersController < ApplicationController
   def set_reminder
     @reminder = current_user.reminders.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    redirect_to reminders_path, alert: "Reminder not found."
+    redirect_to reminders_path, alert: 'Reminder not found.'
   end
 
   def reminder_params

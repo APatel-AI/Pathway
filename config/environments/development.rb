@@ -1,4 +1,6 @@
-require "active_support/core_ext/integer/time"
+# frozen_string_literal: true
+
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   config.after_initialize do
@@ -13,8 +15,8 @@ Rails.application.configure do
   # Allow server to be hosted on any URL
   config.hosts.clear
   # Allow better_errors to work in online IDE
-  config.web_console.allowed_ips = "0.0.0.0/0.0.0.0"
-  BetterErrors::Middleware.allow_ip! "0.0.0.0/0.0.0.0"
+  config.web_console.allowed_ips = '0.0.0.0/0.0.0.0'
+  BetterErrors::Middleware.allow_ip! '0.0.0.0/0.0.0.0'
   # Auto-connect to database when rails console opens
   console do
     ActiveRecord::Base.connection
@@ -37,13 +39,13 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join("tmp/caching-dev.txt").exist?
+  if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      "Cache-Control" => "public, max-age=#{2.days.to_i}"
+      'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -60,14 +62,13 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address: 'smtp.sendgrid.net',
-  port: 587,
-  user_name: 'apikey',
-  password: Rails.application.credentials.dig(:sendgrid, :api_key),
-  authentication: :plain,
-  enable_starttls_auto: true
-}
-
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    user_name: 'apikey',
+    password: Rails.application.credentials.dig(:sendgrid, :api_key),
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

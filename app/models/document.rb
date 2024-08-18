@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: documents
@@ -12,7 +14,7 @@
 #  profile_id  :integer
 #
 class Document < ApplicationRecord
-  belongs_to :dependent, required: true, class_name: "Dependent", foreign_key: "profile_id"
+  belongs_to :dependent, required: true, class_name: 'Dependent', foreign_key: 'profile_id'
   validates :file, presence: true, allow_nil: true
   validates :name, presence: true
 
@@ -20,17 +22,13 @@ class Document < ApplicationRecord
 
   scope :with_file_attachment, -> { includes(:file_attachment) }
 
-
   private
 
   validate :correct_file_format
 
   def correct_file_format
-    if file.attached? && !file.content_type.in?(%w(application/pdf image/jpeg image/png))
-      errors.add(:file, 'must be a PDF, JPG, or PNG')
-    end
+    return unless file.attached? && !file.content_type.in?(%w[application/pdf image/jpeg image/png])
+
+    errors.add(:file, 'must be a PDF, JPG, or PNG')
   end
-
-
-
 end

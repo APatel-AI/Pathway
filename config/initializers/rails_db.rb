@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if Object.const_defined?('RailsDb')
   RailsDb.setup do |config|
     # # enabled or not
@@ -7,7 +9,7 @@ if Object.const_defined?('RailsDb')
     # config.automatic_routes_mount = true
 
     # set tables which you want to hide ONLY
-    config.black_list_tables = ["ar_internal_metadata"]
+    config.black_list_tables = ['ar_internal_metadata']
 
     # set tables which you want to show ONLY
     # config.white_list_tables = ['posts', 'comments']

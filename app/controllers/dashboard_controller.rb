@@ -1,6 +1,7 @@
-class DashboardController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:greetings, :home]
+# frozen_string_literal: true
 
+class DashboardController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[greetings home]
 
   def dashboard
     @start_date = params[:start_date] ? Date.parse(params[:start_date]) : Date.current.beginning_of_month
@@ -8,7 +9,6 @@ class DashboardController < ApplicationController
 
     @dependents = current_user.dependents
     @documents = Document.where(dependent: @dependents).where.not(expiry_date: nil)
-
   end
 
   def home

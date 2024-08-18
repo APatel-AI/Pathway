@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 class UscisScraper
   BASE_URL = 'https://www.uscis.gov/forms/all-forms'
   SITE_URL = 'https://www.uscis.gov'
 
   CATEGORIES = {
-    "Forms" => BASE_URL,
-    "Adoptions-Based Forms" => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1127',
-    "Citizenship and Naturalization-Based Forms" => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1128',
-    "Employment-Based Forms" => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1129',
-    "Family-Based Forms" => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1130',
-    "Green Card-Based Forms" => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1131',
-    "Humanitarian Benefits-Based Forms" => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1132'
-  }
+    'Forms' => BASE_URL,
+    'Adoptions-Based Forms' => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1127',
+    'Citizenship and Naturalization-Based Forms' => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1128',
+    'Employment-Based Forms' => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1129',
+    'Family-Based Forms' => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1130',
+    'Green Card-Based Forms' => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1131',
+    'Humanitarian Benefits-Based Forms' => 'https://www.uscis.gov/forms/all-forms?topic_id[]=1132'
+  }.freeze
 
   def self.scrape_forms
     forms = []
