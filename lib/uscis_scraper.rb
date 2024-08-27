@@ -1,3 +1,4 @@
+# This file should probably be in an app/services folder or a /concerns folder. This folder is more for database-related tasks.
 class UscisScraper
   BASE_URL = 'https://www.uscis.gov/forms/all-forms'
   SITE_URL = 'https://www.uscis.gov'

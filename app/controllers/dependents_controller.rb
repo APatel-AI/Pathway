@@ -13,6 +13,7 @@ class DependentsController < ApplicationController
 
   # GET /dependents/1 or /dependents/1.json
   def show
+    # Don't need this line because of the before_action :set_dependent
     @dependent = Dependent.find(params[:id])
     @documents = @dependent.documents
     add_breadcrumb 'Dependents', dependents_path
