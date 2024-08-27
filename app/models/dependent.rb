@@ -24,3 +24,6 @@ class Dependent < ApplicationRecord
   has_one_attached :image
   validates :notes, length: { maximum: 500 }
 end
+
+
+# As it stands, it's possible to create a dependent with no attribute input whatsoever - probably should add validations

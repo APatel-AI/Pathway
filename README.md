@@ -74,11 +74,12 @@ echo 'config/master.key' >> .gitignore
 
 ### Current Main Branch:
 - bundle install
-- rails db:migratet
+- rails db:migrate
 - rake sample_data
 - bin/dev
 
 After running the above commands, sign in with: 
+<!-- this doesn't work in development, only production -->
 - Email: hiro@example.com
 - Password: password
 
@@ -148,4 +149,3 @@ Thank you for contributing to Pathway!
 ### Ruby Version Errors
 - The project is written using Ruby 3.2.1, if you encounter issues upon cloning, make sure you have Ruby version 3.2.1 in your environment.
   
-

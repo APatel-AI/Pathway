@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# Could use more comments to make this file clearer
 class FormsController < ApplicationController
   skip_before_action :authenticate_user!
 
@@ -22,7 +22,6 @@ class FormsController < ApplicationController
       'Family',
       'Green Card',
       'Humanitarian Benefits'
-
     ]
 
     forms = forms.select { |form| categorize_form(form[:name]) == params[:category] } if params[:category].present?
