@@ -5,7 +5,7 @@ class FormsController < ApplicationController
     #Scrape forms from the USCIS website
     forms = UscisScraper.scrape_forms
 
-    # Filter forms based on the search query
+    #Filter forms based on the search query
     if params[:query].present?
       query = params[:query].downcase
       forms = forms.select do |form|
@@ -15,14 +15,13 @@ class FormsController < ApplicationController
 
     #Available form categories
     @categories = [
-      'Forms',
-      'Adoptions',
-      'Citizenship and Naturalization',
-      'Employment',
-      'Family',
-      'Green Card',
-      'Humanitarian Benefits'
-
+      "Forms",
+      "Adoptions",
+      "Citizenship and Naturalization",
+      "Employment",
+      "Family",
+      "Green Card",
+      "Humanitarian Benefits",
     ]
 
     #Filter forms by selected caategory if provided
@@ -35,30 +34,30 @@ class FormsController < ApplicationController
     end
 
     @breadcrumbs = [
-      { name: 'Home', url: root_path },
-      { name: 'Forms', url: forms_path }
+      { name: "Home", url: root_path },
+      { name: "Forms", url: forms_path },
     ]
   end
 
   private
 
-  # Categorize forms based on their name
+  #Categorize forms based on their name
   def categorize_form(form_name)
     case form_name.downcase
     when /adoption/
-      'Adoptions'
+      "Adoptions"
     when /citizenship|naturalization/
-      'Citizenship and Naturalization'
+      "Citizenship and Naturalization"
     when /employment/
-      'Employment'
+      "Employment"
     when /family/
-      'Family'
+      "Family"
     when /green card|permanent resident/
-      'Green Card'
+      "Green Card"
     when /humanitarian|benefit/
-      'Humanitarian Benefits'
+      "Humanitarian Benefits"
     else
-      'Forms'
+      "Forms"
     end
   end
 end

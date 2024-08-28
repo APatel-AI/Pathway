@@ -26,7 +26,7 @@
 
   <div class="mb-3">
     <%= form.label :relationship, class: "form-label" %>
-    <%= form.text_field :relationship, class: "form-control" %>
+    <%= form.select :relationship, options_for_select(['Self', 'Spouse', 'Child', 'Parent', 'Sibling', 'Fiancé(e)', 'Legal Guardian', 'Stepchild', 'Stepparent', 'Adopted Child', 'Sponsor', 'Other']), {}, class: "form-control" %>
   </div>
 
   <div class="mb-3">

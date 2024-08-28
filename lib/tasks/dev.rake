@@ -40,7 +40,7 @@ unless Rails.env.production?
 
       dependent = Dependent.create(
         address: "200 South Wacker dr",
-        relationship: "Brother",
+        relationship: "Sibling",
         first_name: "Enzo",
         last_name: "Hamada",
         date_of_birth: Date.new(2001, 2, 6),
