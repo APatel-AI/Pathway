@@ -58,6 +58,7 @@
   .hero p {
     font-size: 0.5rem;
   }
+  
 
 }
 
@@ -134,26 +135,33 @@
   color: #666;
 }
 
-.feature-videos .card {
-  border-radius: 8px;
-  overflow: hidden;
-  height: 500px;
+
+
+.video-container {
   display: flex;
-  flex-direction: column;
+  padding: 50px;
+  align-items: center;
+  margin-bottom: 8rem;
+  background-color: black;
+
 }
 
-.feature-videos .card-body {
-  flex: 1;
+.video-player {
+  max-height: 500px;
+  width: 100%;
 }
 
-.feature-videos .card-img-top {
-  object-fit:contain;
+.video-description {
+  color: white;
+  padding: 10px;
+  width: 300px; 
+  text-align: center;
 }
 
-.feature-videos .card-footer {
-  background-color: #000;
-  color: #fff;
-  padding: 15px;
-  font-weight: lighter;
-  font-size: 1.1rem;
+.d-flex.flex-row-reverse .video-description {
+  margin-left: 20px; 
+}
+
+.d-flex.flex-row .video-description {
+  margin-right: 20px; 
 }
