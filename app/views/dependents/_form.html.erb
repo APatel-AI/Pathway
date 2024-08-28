@@ -21,42 +21,42 @@
 
   <div class="mb-3">
     <%= form.label :address, class: "form-label" %>
-    <%= form.text_area :address, class: "form-control", rows: 3 %>
+    <%= form.text_area :address, class: "form-control", rows: 3, required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :relationship, class: "form-label" %>
-    <%= form.select :relationship, options_for_select(['Self', 'Spouse', 'Child', 'Parent', 'Sibling', 'Fiancé(e)', 'Legal Guardian', 'Stepchild', 'Stepparent', 'Adopted Child', 'Sponsor', 'Other']), {}, class: "form-control" %>
+    <%= form.select :relationship, options_for_select(['Self', 'Spouse', 'Child', 'Parent', 'Sibling', 'Fiancé(e)', 'Legal Guardian', 'Stepchild', 'Stepparent', 'Adopted Child', 'Sponsor', 'Other']), {}, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :first_name, class: "form-label" %>
-    <%= form.text_field :first_name, class: "form-control" %>
+    <%= form.text_field :first_name, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :last_name, class: "form-label" %>
-    <%= form.text_field :last_name, class: "form-control" %>
+    <%= form.text_field :last_name, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :date_of_birth, class: "form-label" %>
-    <%= form.date_field :date_of_birth, class: "form-control" %>
+    <%= form.date_field :date_of_birth, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :immigration_status, class: "form-label" %>
-    <%= form.select :immigration_status, options_for_select(['Citizen', 'Permanent Resident', 'Work Visa', 'Student Visa', 'Refugee', 'Other']), {}, class: "form-control" %>
+    <%= form.select :immigration_status, options_for_select(['Citizen', 'Permanent Resident', 'Work Visa', 'Student Visa', 'Refugee', 'Other']), {}, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :country_of_citizenship, class: "form-label" %>
-    <%= form.text_field :country_of_citizenship, class: "form-control" %>
+    <%= form.text_field :country_of_citizenship, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :contact_info, class: "form-label" %>
-    <%= form.text_area :contact_info, class: "form-control", rows: 3 %>
+    <%= form.text_area :contact_info, class: "form-control", rows: 3, required: true %>
   </div>
 
   <div class="mb-3">
