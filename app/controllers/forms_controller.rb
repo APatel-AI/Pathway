@@ -1,9 +1,8 @@
-# frozen_string_literal: true
-
 class FormsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
+    #Scrape forms from the USCIS website
     forms = UscisScraper.scrape_forms
 
     # Filter forms based on the search query
@@ -14,6 +13,7 @@ class FormsController < ApplicationController
       end
     end
 
+    #Available form categories
     @categories = [
       'Forms',
       'Adoptions',
@@ -25,8 +25,10 @@ class FormsController < ApplicationController
 
     ]
 
+    #Filter forms by selected caategory if provided
     forms = forms.select { |form| categorize_form(form[:name]) == params[:category] } if params[:category].present?
 
+    #Paginatee the filtered forms, (10 per page)
     @forms = WillPaginate::Collection.create(params[:page] || 1, 10, forms.length) do |pager|
       start = pager.offset
       pager.replace forms[start, pager.per_page]
@@ -40,6 +42,7 @@ class FormsController < ApplicationController
 
   private
 
+  # Categorize forms based on their name
   def categorize_form(form_name)
     case form_name.downcase
     when /adoption/
