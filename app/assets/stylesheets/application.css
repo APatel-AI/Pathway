@@ -61,7 +61,6 @@
   padding: 50px;
   align-items: center;
   margin-bottom: 8rem;
-  background-color: black;
 }
 
 .video-player {
@@ -70,10 +69,13 @@
 }
 
 .video-description {
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 10px;
   width: 300px;
   text-align: center;
+  font-size: 3rem;
+  background-color: #f8f9fa;
+  border-radius: 1rem;
 }
 
 .d-flex.flex-row-reverse .video-description {
@@ -98,13 +100,19 @@
     font-size: 0.5rem;
   }
 
-  .video-container {
-    display: flex;
+ .video-container {
     padding: 15px;
     align-items: center;
-    margin-bottom: 8rem;
-    background-color: black;
+    margin-bottom: 5rem;
+    flex-direction: column;
   }
+
+  .video-player {
+    width: 100%; 
+    height: auto; 
+  }
+
+
 }
 
 /* Medium */

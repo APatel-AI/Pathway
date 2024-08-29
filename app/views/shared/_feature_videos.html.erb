@@ -1,7 +1,8 @@
 <div class="feature-videos container-fluid py-5">
   <div class="d-flex flex-column align-items-center">
-    <div class="video-container d-flex flex-column flex-lg-row-reverse ">
-      <video class="video-player" autoplay loop muted playsinline>
+
+    <div class="video-container d-flex flex-column flex-lg-row-reverse">
+      <video class="video-player" controls autoplay loop muted playsinline>
         <source src="<%= asset_path('access_forms.mov') %>" type="video/mp4">
       </video>
       <div class="video-description text-center mt-3 mt-lg-0">
@@ -10,16 +11,7 @@
     </div>
 
     <div class="video-container d-flex flex-column flex-lg-row align-items-center">
-      <video class="video-player w-100" autoplay loop muted playsinline>
-        <source src="<%= asset_path('create_profiles.mov') %>" type="video/mp4">
-      </video>
-      <div class="video-description text-center mt-3 mt-lg-0">
-        <h5 class="mb-0">Create New Profiles</h5>
-      </div>
-    </div>
-
-    <div class="video-container d-flex flex-column flex-lg-row-reverse">
-      <video class="video-player w-100" autoplay loop muted playsinline>
+      <video class="video-player w-100" controls autoplay loop muted playsinline>
         <source src="<%= asset_path('create_profiles.mov') %>" type="video/mp4">
       </video>
       <div class="video-description text-center mt-3 mt-lg-0">
@@ -28,12 +20,13 @@
     </div>
 
     <div class="video-container d-flex flex-column flex-lg-row">
-      <video class="video-player" autoplay loop muted playsinline>
+      <video class="video-player" controls autoplay loop muted playsinline>
         <source src="<%= asset_path('set_reminders.mov') %>" type="video/mp4">
       </video>
       <div class="video-description text-center mt-3 mt-lg-0">
         <h5 class="mb-0">Set Reminders</h5>
       </div>
     </div>
+
   </div>
 </div>
