@@ -41,12 +41,53 @@
   color: #6c757d;
 }
 
+.intro-message {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
 
+.intro-message h3 {
+  color: #333;
+}
 
+.intro-message p {
+  color: #666;
+}
 
+.video-container {
+  display: flex;
+  padding: 50px;
+  align-items: center;
+  margin-bottom: 8rem;
+}
+
+.video-player {
+  max-height: 500px;
+  width: 100%;
+}
+
+.video-description {
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  font-size: 3rem;
+  background-color: #f8f9fa;
+  border-radius: 1rem;
+}
+
+.d-flex.flex-row-reverse .video-description {
+  margin-left: 20px;
+}
+
+.d-flex.flex-row .video-description {
+  margin-right: 20px;
+}
 
 /* Small */
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
   .hero h1 {
     font-size: 4rem;
   }
@@ -59,10 +100,23 @@
     font-size: 0.5rem;
   }
 
+ .video-container {
+    padding: 15px;
+    align-items: center;
+    margin-bottom: 5rem;
+    flex-direction: column;
+  }
+
+  .video-player {
+    width: 100%; 
+    height: auto; 
+  }
+
+
 }
 
 /* Medium */
-@media only screen and (min-width: 768px)  {
+@media only screen and (min-width: 768px) {
   .hero {
     height: 60vh;
   }
@@ -99,7 +153,7 @@
   }
 }
 
-/* Extra large */ 
+/* Extra large */
 @media (min-width: 1200px) {
   .hero {
     height: 80vh;
@@ -116,44 +170,4 @@
   .hero p {
     font-size: 1rem;
   }
-}
-
-
-.intro-message {
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 30px;
-}
-
-.intro-message h3 {
-  color: #333;
-}
-
-.intro-message p {
-  color: #666;
-}
-
-.feature-videos .card {
-  border-radius: 8px;
-  overflow: hidden;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-}
-
-.feature-videos .card-body {
-  flex: 1;
-}
-
-.feature-videos .card-img-top {
-  object-fit:contain;
-}
-
-.feature-videos .card-footer {
-  background-color: #000;
-  color: #fff;
-  padding: 15px;
-  font-weight: lighter;
-  font-size: 1.1rem;
 }

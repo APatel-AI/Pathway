@@ -74,7 +74,7 @@ echo 'config/master.key' >> .gitignore
 
 ### Current Main Branch:
 - bundle install
-- rails db:migratet
+- rails db:migrate
 - rake sample_data
 - bin/dev
 
@@ -147,5 +147,3 @@ Thank you for contributing to Pathway!
 
 ### Ruby Version Errors
 - The project is written using Ruby 3.2.1, if you encounter issues upon cloning, make sure you have Ruby version 3.2.1 in your environment.
-  
-
